@@ -5,7 +5,6 @@
 package modelo;
 
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,15 +18,16 @@ public class Historial {
     public Historial() {
         this.consultas = new ArrayList<>();
     }
-
-    public void agregarConsulta(Consulta consulta) {
+    
+     /* public void agregarConsulta(Consulta consulta) {
         if (consulta != null) {
             consultas.add(consulta);
         }
     }
-    private Veterinario vet;
+}
+    //private Veterinario vet;
     
-    public void mostrarConsultas(Veterinario vet) {
+    /*public void mostrarConsultas(Veterinario vet) {
         if (consultas.isEmpty()) {
             JOptionPane.showMessageDialog(null, "No hay consultas registradas", "Alerta", JOptionPane.WARNING_MESSAGE);
         } else {
@@ -41,4 +41,8 @@ public class Historial {
     public ArrayList<Consulta> getConsultas() {
         return new ArrayList<>(consultas);
     }
+}
+
+}
+*/
 }

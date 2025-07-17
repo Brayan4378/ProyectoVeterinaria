@@ -5,7 +5,7 @@
 package dao;
 
 import java.util.ArrayList;
-import modelo.Propietario;
+import dto.PropietarioDTO;
 
 /**
  *
@@ -13,13 +13,13 @@ import modelo.Propietario;
  */
 public class PropietarioDAO {
     
-     private ArrayList<Propietario> propietarios = new ArrayList<>();
+     private ArrayList<PropietarioDTO> propietarios = new ArrayList<>();
 
     public PropietarioDAO() {
     }
 
-    public boolean guardarPropietario(Propietario propietario){
-        for (Propietario p : propietarios) {
+    public boolean guardarPropietario(PropietarioDTO propietario){
+        for (PropietarioDTO p : propietarios) {
             if (p.getDocumento().equals(propietario.getDocumento()) || p.getDocumento().equals(-1) || p.getDocumento().equals(200000000)) {
                 return false;
             }
@@ -28,8 +28,8 @@ public class PropietarioDAO {
         return true;
     }
 
-    public Propietario buscarPropietario(String documento) {
-        for (Propietario p : propietarios) {
+    public PropietarioDTO buscarPropietario(String documento) {
+        for (PropietarioDTO p : propietarios) {
             if (p.getDocumento().equals(documento)) {
                 return p;
             }
@@ -38,7 +38,7 @@ public class PropietarioDAO {
     }
 
     public boolean eliminarPropietario(String documento){
-        for (Propietario p : propietarios) {
+        for (PropietarioDTO p : propietarios) {
             if (p.getDocumento().equals(documento)) {
                 propietarios.remove(p);
                 return true;
@@ -47,8 +47,8 @@ public class PropietarioDAO {
         return false;
     }
 
-    public boolean editarPropietario(String documento, Propietario nuevoPropietario) {
-        for (Propietario p : propietarios) {
+    public boolean editarPropietario(String documento, PropietarioDTO nuevoPropietario) {
+        for (PropietarioDTO p : propietarios) {
             if (p.getDocumento().equals(documento)) {
                 p.setNombre(nuevoPropietario.getNombre());
                 p.setTelefono(nuevoPropietario.getTelefono());
@@ -58,7 +58,7 @@ public class PropietarioDAO {
         return false;
     }
     
-    public ArrayList<Propietario> obtenerTodos() {
+    public ArrayList<PropietarioDTO> obtenerTodos() {
         return new ArrayList<>(propietarios); // copia defensiva
     }
 }

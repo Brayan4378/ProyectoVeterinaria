@@ -2,17 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package modelo;
+package dto;
 
 /**
  *
  * @author BrayanOcampo
  */
-public abstract class Persona {
-    
-    String nombre;
+public abstract class PersonaDTO {String nombre;
 
-    public Persona(String nombre) {
+    public PersonaDTO(String nombre) {
         this.nombre = nombre;
     }
 

@@ -86,7 +86,7 @@ public class VentanaServicios extends javax.swing.JFrame {
         barraCarga.setMinimum(0);
         barraCarga.setMaximum(100);
         barraCarga.setStringPainted(true);
-        barraCarga.setForeground(Color.BLUE); // Color verde
+        barraCarga.setForeground(Color.BLUE); // Color azul
 
     new Thread(() -> {
         for (int i = 0; i <= 100; i++) {

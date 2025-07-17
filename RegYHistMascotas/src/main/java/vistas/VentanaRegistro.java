@@ -4,11 +4,12 @@
  */
 
 package vistas;
-import modelo.Mascota;
-import modelo.Propietario;
+import dto.MascotaDTO;
+import dto.PersonaDTO;
 import controladores.MascotaControlador;
 import controladores.PropietarioControlador;
 import dao.*;
+import dto.PropietarioDTO;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -24,8 +25,8 @@ public class VentanaRegistro extends javax.swing.JFrame {
     private MascotaDAO mascotaDAO;
     private PropietarioDAO propietarioDAO;
     // Controladores
-    private PropietarioControlador propietarioControlador = new PropietarioControlador();
-    private MascotaControlador mascotaControlador = new MascotaControlador();
+    private PropietarioControlador propietarioControlador;
+    private MascotaControlador mascotaControlador;
 
     /**
      * Creates new form VentanaRegistro
@@ -61,8 +62,8 @@ public class VentanaRegistro extends javax.swing.JFrame {
     private void actualizarTablaMascotas() {
     String[] columnas = {"ID", "Nombre", "Especie", "Edad", "Documento Propietario"};
     DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
-    ArrayList<Mascota> lista = mascotaControlador.obtenerTodasMasc();
-        for (Mascota m : lista) {
+    ArrayList<MascotaDTO> lista = mascotaControlador.obtenerTodasMasc();
+        for (MascotaDTO m : lista) {
             Object[] fila = {
                 m.getId(),
                 m.getNombre(),
@@ -72,8 +73,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
             };
             modelo.addRow(fila);
     }
-    tablaMasc.setModel(modelo);
-    
+    tablaMasc.setModel(modelo); 
 }
 
     private void iniciarCarga() {
@@ -101,10 +101,10 @@ private void actualizarTablaPropietarios() {
     String[] columnas = {"Nombre", "Documento", "Teléfono"};
     DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
 
-    ArrayList<Propietario> lista = propietarioControlador.obtenerPropietarios();
+    ArrayList<PropietarioDTO> lista = propietarioControlador.obtenerPropietarios();
 
     if (lista != null && !lista.isEmpty()) {
-        for (Propietario p : lista) {
+        for (PropietarioDTO p : lista) {
             Object[] fila = {p.getNombre(), p.getDocumento(), p.getTelefono()};
             modelo.addRow(fila);
         }
@@ -546,7 +546,7 @@ private void inicializarComboEspecie() {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "title 1", "title 2", "title 3", "title 4"
             }
         ));
         jScrollPane2.setViewportView(tablaMasc);
@@ -746,14 +746,14 @@ private void inicializarComboEspecie() {
             JOptionPane.showMessageDialog(this, "Debe ingresar un documento válido.");
             return;
         }
-        ArrayList<Mascota> resultado = mascotaControlador.buscarPorDocumentoPropietario(documento);
+        ArrayList<MascotaDTO> resultado = mascotaControlador.buscarPorDocumentoPropietario(documento);
 
         if (resultado.isEmpty()) {
             JOptionPane.showMessageDialog(this, "No se encontraron mascotas para este documento.");
         } else {
             DefaultTableModel modelo = (DefaultTableModel) tablaMasc.getModel();
             modelo.setRowCount(0); // Limpiar la tabla
-            for (Mascota m : resultado) {
+            for (MascotaDTO m : resultado) {
                 modelo.addRow(new Object[]{
                     m.getId(),
                     m.getNombre(),
@@ -786,7 +786,7 @@ private void inicializarComboEspecie() {
         if (nuevoNombre != null && nuevaEspecie != null && edadTexto != null &&
             !nuevoNombre.equals("") && !nuevaEspecie.equals("") && !edadTexto.equals("")) {
             int nuevaEdad = Integer.parseInt(edadTexto);
-            Mascota nueva = new Mascota(id, nuevoNombre, nuevaEspecie, nuevaEdad);
+            MascotaDTO nueva = new MascotaDTO(id, nuevoNombre, nuevaEspecie, nuevaEdad);
             boolean editado = mascotaControlador.editarMascota(id, nuevoNombre, nuevaEspecie, nuevaEdad);
             if (editado) {
                 JOptionPane.showMessageDialog(this, "Mascota actualizada.");
@@ -807,7 +807,7 @@ private void inicializarComboEspecie() {
             return;
         }
         String id = (String) tablaMasc.getValueAt(fila, 0);
-        Mascota mascota = mascotaControlador.buscarMascota(id);
+        MascotaDTO mascota = mascotaControlador.buscarMascota(id);
         if (mascota != null && mascotaControlador.eliminarMascota(id)) {
             JOptionPane.showMessageDialog(this, "Mascota eliminada correctamente.");
             actualizarTablaMascotas();
@@ -823,7 +823,7 @@ private void inicializarComboEspecie() {
             JOptionPane.showMessageDialog(this, "Ingrese el ID de la mascota.");
             return;
         }
-        Mascota m = mascotaControlador.buscarMascota(id);
+        MascotaDTO m = mascotaControlador.buscarMascota(id);
         if (m != null) {
             JOptionPane.showMessageDialog(this, "Mascota encontrada:\nNombre: " + m.getNombre()
                 + "\nEspecie: " + m.getEspecie() + "\nEdad: " + m.getEdad());
@@ -876,7 +876,7 @@ private void inicializarComboEspecie() {
         // TODO add your handling code here:
         String documento = txtDocumentoPropietario.getText();
         if (!documento.isBlank()) {
-            Propietario p = propietarioControlador.buscarPropietario(documento);
+            PropietarioDTO p = propietarioControlador.buscarPropietario(documento);
             if (p != null) {
                 txtNombrePropietario.setText(p.getNombre());
                 txtTelefonoPropietario.setText(p.getTelefono());
@@ -897,7 +897,7 @@ private void inicializarComboEspecie() {
             JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        Propietario propietario = new Propietario(nombre, documento, telefono);
+        PropietarioDTO propietario = new PropietarioDTO(nombre, documento, telefono);
         propietario.setNombre(nombre);
         propietario.setDocumento(documento);
         propietario.setTelefono(telefono);
@@ -933,16 +933,15 @@ private void inicializarComboEspecie() {
             JOptionPane.showMessageDialog(this, "La edad debe ser un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
         // Validar existencia del propietario
-        Propietario propietarioEncontrado = propietarioControlador.buscarPropietario(documentoProp);
+        PropietarioDTO propietarioEncontrado = propietarioControlador.buscarPropietario(documentoProp);
         if (propietarioEncontrado == null) {
             JOptionPane.showMessageDialog(this, "No existe un propietario con ese documento.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         // Crear mascota y asociar documento del propietario
-        Mascota nueva = new Mascota(id, nombre, especie, edad);
+        MascotaDTO nueva = new MascotaDTO(id, nombre, especie, edad);
         nueva.setDocumentoProp(documentoProp);
 
         boolean exito = mascotaControlador.registrarMascota(id, nombre, especie, edad, documentoProp);

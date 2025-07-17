@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package dao;
-import modelo.Mascota;
+import dto.MascotaDTO;
 import java.util.ArrayList;
 /**
  *
@@ -12,17 +12,17 @@ import java.util.ArrayList;
 public class MascotaDAO {
     
     
-    private ArrayList<Mascota> mascotas = new ArrayList();
+    private ArrayList<MascotaDTO> mascotas = new ArrayList();
 
     public MascotaDAO() {
     }
     
-    public ArrayList<Mascota> getMascotas() {
+    public ArrayList<MascotaDTO> getMascotas() {
     return mascotas;
 }
 
-   public boolean guardarMascota(Mascota mascota){
-       for (Mascota m : mascotas ) {
+   public boolean guardarMascota(MascotaDTO mascota){
+       for (MascotaDTO m : mascotas ) {
            if( m.getId().equals(mascota.getId())){
                return false;
            }
@@ -31,8 +31,8 @@ public class MascotaDAO {
        return true;
    } 
     
-   public Mascota buscarMascota(String id) {
-    for (Mascota m : mascotas) {
+   public MascotaDTO buscarMascota(String id) {
+    for (MascotaDTO m : mascotas) {
         if (m.getId().equals(id)) {
             return m;
         }
@@ -41,8 +41,8 @@ public class MascotaDAO {
 }
 
    
-   public boolean eliminarMascota(Mascota mascota){
-       for (Mascota m : mascotas) {
+   public boolean eliminarMascota(MascotaDTO mascota){
+       for (MascotaDTO m : mascotas) {
            if( m.getId().equals(mascota.getId())){
                mascotas.remove(m);
                return true;
@@ -51,8 +51,8 @@ public class MascotaDAO {
        return false;
    }
    
-   public boolean editarMascota(String id, Mascota mascota) {
-    for (Mascota m : mascotas) {
+   public boolean editarMascota(String id, MascotaDTO mascota) {
+    for (MascotaDTO m : mascotas) {
         if (m.getId().equals(id)) {
             m.setNombre(mascota.getNombre());
             m.setEspecie(mascota.getEspecie());
@@ -63,9 +63,9 @@ public class MascotaDAO {
     return false;
 }
    
-   public ArrayList<Mascota> buscarPorDocumentoPropietario(String documento) {
-        ArrayList<Mascota> resultado = new ArrayList<>();
-        for (Mascota m : mascotas) {
+   public ArrayList<MascotaDTO> buscarPorDocumentoPropietario(String documento) {
+        ArrayList<MascotaDTO> resultado = new ArrayList<>();
+        for (MascotaDTO m : mascotas) {
             if (m.getDocumentoProp().equals(documento)) {
                 resultado.add(m);
             }

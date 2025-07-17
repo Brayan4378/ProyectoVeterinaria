@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vistas;
-import modelo.Vacuna;
-import modelo.Mascota;
+import dto.VacunaDTO;
+import dto.MascotaDTO;
 import controladores.*;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
@@ -230,17 +230,17 @@ public class VentanaVacuna extends javax.swing.JFrame {
             return;
         }
         // Verificar que exista la mascota con ese documento
-        Mascota mascota = mascotaControlador.buscarMascota(tipo);
+        MascotaDTO mascota = mascotaControlador.buscarMascota(tipo);
         if (mascota == null) {
             JOptionPane.showMessageDialog(null, "No se encontró la mascota con esos datos.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        Vacuna vacuna = new Vacuna();
+        VacunaDTO vacuna = new VacunaDTO(tipo, codigo, LocalDate.now(), LocalDate.MIN);
         vacuna.setTipo(tipo);
-        vacuna.setCodigo(tipo);
+        vacuna.setCodigo(codigo);
         vacuna.setFechaAplicacion(LocalDate.parse(fecha));
         vacuna.setProximaDosis(LocalDate.parse(proxima));
-        boolean guardada = vacunaControlador.registrarVacuna(tipo, codigo, LocalDate.EPOCH, LocalDate.MIN);
+        boolean guardada = vacunaControlador.registrarVacuna(tipo, codigo, LocalDate.now(), LocalDate.MIN);
         if (guardada) {
             JOptionPane.showMessageDialog(null, "Vacuna registrada con éxito.");
             limpiarCampos();

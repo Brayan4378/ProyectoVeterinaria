@@ -2,23 +2,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package modelo;
+package dto;
 
-// import java.util.ArrayList;
-
-
-public class Mascota {
-
-    //Atributos encapsulados
+/**
+ *
+ * @author BrayanOcampo
+ */
+public class MascotaDTO {
+    
+     //Atributos encapsulados
     private String nombre;
     private String especie;
     private int edad;
     private String id;
     //private ArrayList<Consulta> consultas = new ArrayList<>();
+    //Se delega la responsabilidad del historial
     private String documentoProp;
 
     //Constructor
-    public Mascota( String id, String nombre, String especie, int edad) {
+    public MascotaDTO( String id, String nombre, String especie, int edad) {
         /*this.nombre = nombre;
         this.especie = especie;
         this.edad = edad;*/
@@ -27,7 +29,6 @@ public class Mascota {
         setEspecie(especie);
         setEdad(edad);
         setId(id);
-       // this.historial = new Historial(); //Se reemplaza la lista directa
     }
 
     //Método para agregar una consulta
@@ -35,12 +36,12 @@ public class Mascota {
         consultas.add(cons);
     }*/
     //Se delega a la clase Historial
-   /* public void agregarConsulta(Consulta cons) {
+    /*public void agregarConsulta(Consulta cons) {
         if(cons == null){
             throw new IllegalArgumentException("Debes agregar una consulta, no puede ser nula");
         }
         historial.agregarConsulta(cons);
-    }
+    }*/
 
     //Muestra historial de la mascota
     /*public void mostrarHistorial(Veterinario vet) {
@@ -54,8 +55,8 @@ public class Mascota {
     
   /*  public void mostrarHistorial(Veterinario vet) {
     System.out.println("| Mascota |" + "| Nombre |: " + nombre + " | Especie |: " + especie + " | Edad |: " + edad + " años");
-    historial.mostrarConsultas(vet);*/
-
+    historial.mostrarConsultas(vet);
+}*/
 
     //Getters
     public String getNombre() {
@@ -113,6 +114,4 @@ public class Mascota {
         }
         this.documentoProp = documentoProp;
     }
-  
 }
-

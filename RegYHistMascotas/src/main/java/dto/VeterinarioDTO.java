@@ -2,19 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package modelo;
+package dto;
 
 /**
  *
  * @author BrayanOcampo
  */
-public class Veterinario extends Persona {
+public class VeterinarioDTO extends PersonaDTO {
     
-    //Atributos protegidos de la clase veterinario
     private String especialidad;
 
     //Constructor de la clase veterinario, recibe nombre y especialidad, inicializa el objeto para despues asignarle valores
-    public Veterinario(String nombre, String especialidad) {
+    public VeterinarioDTO(String nombre, String especialidad) {
         /*this.nombre = nombre;
         this.especialidad = especialidad;*/
         super(nombre);
@@ -38,6 +37,4 @@ public class Veterinario extends Persona {
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
-    
-   
 }

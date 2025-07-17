@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controladores;
-import modelo.Vacuna;
 import dao.VacunaDAO;
+import dto.VacunaDTO;
 import java.time.LocalDate;
 
 /**
@@ -27,12 +27,12 @@ public class VacunaControlador {
             return false;
         }
 
-        Vacuna nueva = new Vacuna(tipo, lote, fechaAplicacion, proximaDosis);
+        VacunaDTO nueva = new VacunaDTO(tipo, lote, fechaAplicacion, proximaDosis);
         return dao.guardarVacuna(nueva);
     }
 
     // Método para buscar vacuna
-    public Vacuna buscarVacuna(String tipo, String lote) {
+    public VacunaDTO buscarVacuna(String tipo, String lote) {
         if (tipo != null && lote != null && !tipo.isBlank() && !lote.isBlank()) {
             return dao.buscarVacuna(tipo, lote);
         }
@@ -45,7 +45,7 @@ public class VacunaControlador {
             return false;
         }
 
-        Vacuna nueva = new Vacuna(tipo, lote, nuevaFecha, nuevaProxima);
+        VacunaDTO nueva = new VacunaDTO(tipo, lote, nuevaFecha, nuevaProxima);
         return dao.editarVacuna(tipo, lote, nueva);
     }
 

@@ -5,6 +5,7 @@
 package controladores;
 import modelo.Consulta;
 import dao.ConsultaDAO;
+import java.time.LocalDate;
 import java.util.ArrayList;
 /**
  *
@@ -13,26 +14,25 @@ import java.util.ArrayList;
 
 public class ConsultaControlador {
 
-    private ConsultaDAO dao;
+     private final ConsultaDAO dao;
 
     public ConsultaControlador() {
         this.dao = new ConsultaDAO();
     }
 
-    public boolean registrarConsulta(String codigo, String fechaTexto) {
-        // Validar que el código y la fecha no estén vacíos
-        if (codigo == null || codigo.isBlank() || fechaTexto == null || fechaTexto.isBlank()) {
+    // Registra una nueva consulta
+    public boolean registrarConsulta(String codigo, LocalDate fecha, String diagnostico, String tratamiento, String documentoProCons, String nombreMascCons) {
+        // Validar campos obligatorios
+        if (codigo == null || codigo.isBlank() || fecha == null || diagnostico == null || diagnostico.isBlank()) {
             return false;
         }
-        // Validar formato de fecha (YYYY-MM-DD)
-        if (!fechaTexto.matches("\\d{4}-\\d{2}-\\d{2}")) {
-            return false;
-        }
-        // Crear consulta usando setters validados en la clase modelo
-        Consulta c = new Consulta(codigo, fechaTexto);
-        return dao.guardarConsulta(c);
+        // Crear la consulta
+        Consulta consulta = new Consulta(codigo, fecha, diagnostico, tratamiento, documentoProCons, nombreMascCons);
+        // Guardar en DAO
+        return dao.guardarConsulta(consulta);
     }
 
+    // Buscar consulta por código
     public Consulta buscarConsulta(String codigo) {
         if (codigo == null || codigo.isBlank()) {
             return null;
@@ -40,32 +40,48 @@ public class ConsultaControlador {
         return dao.buscarConsulta(codigo);
     }
 
+    // Eliminar consulta por código
     public boolean eliminarConsulta(String codigo) {
         if (codigo == null || codigo.isBlank()) {
             return false;
         }
-        Consulta c = dao.buscarConsulta(codigo);
-        if (c != null) {
+        Consulta consulta = dao.buscarConsulta(codigo);
+        if (consulta != null) {
             return dao.eliminarConsulta(codigo);
         }
         return false;
     }
 
-    public boolean editarConsulta(String codigoOriginal, String nuevaFechaTexto) {
-        if (codigoOriginal == null || codigoOriginal.isBlank() || nuevaFechaTexto == null || nuevaFechaTexto.isBlank()) {
+    // Editar solo la fecha de una consulta existente
+    public boolean editarConsulta(String codigo, String nuevaFechaTexto) {
+        if (codigo == null || codigo.isBlank() || nuevaFechaTexto == null || nuevaFechaTexto.isBlank()) {
             return false;
         }
 
+        // Validar formato de fecha (YYYY-MM-DD)
         if (!nuevaFechaTexto.matches("\\d{4}-\\d{2}-\\d{2}")) {
             return false;
         }
 
-        Consulta nueva = new Consulta(codigoOriginal, nuevaFechaTexto);
-        return dao.editarConsulta(codigoOriginal, nueva);
+        // Convertir texto a LocalDate
+        LocalDate nuevaFecha = LocalDate.parse(nuevaFechaTexto);
+
+        // Obtener la consulta actual
+        Consulta consultaExistente = dao.buscarConsulta(codigo);
+        if (consultaExistente == null) {
+            return false;
+        }
+
+        // Crear nueva consulta copiando datos existentes pero con nueva fecha
+        Consulta nuevaConsulta = new Consulta(consultaExistente.getCodigo(), nuevaFecha, consultaExistente.getDiagnostico(), consultaExistente.getTratamiento(), consultaExistente.getDocumentoProCons(), consultaExistente.getNombreMascCons());
+        // Editar en el DAO
+        return dao.editarConsulta(codigo, nuevaConsulta);
     }
-    
+
+    // Obtener todas las consultas
     public ArrayList<Consulta> obtenerTodas() {
         return dao.obtenerTodas();
     }
 }
+
 

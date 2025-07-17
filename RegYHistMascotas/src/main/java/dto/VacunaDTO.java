@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package modelo;
+package dto;
 
 import java.time.LocalDate;
 
@@ -10,10 +10,9 @@ import java.time.LocalDate;
  *
  * @author BrayanOcampo
  */
-
-public class Vacuna {
-
-    private String tipo;
+public class VacunaDTO {
+    
+     private String tipo;
     private String codigo;
     private LocalDate fechaAplicacion;
     private LocalDate proximaDosis;
@@ -21,14 +20,14 @@ public class Vacuna {
 
 
     // Constructor con parámetros
-    public Vacuna(String tipo, String lote, LocalDate fechaAplicacion, LocalDate proximaDosis) {
+    public VacunaDTO(String tipo, String lote, LocalDate fechaAplicacion, LocalDate proximaDosis) {
         setTipo(tipo);
         setCodigo(codigo);
         setFechaAplicacion(fechaAplicacion);
         setProximaDosis(proximaDosis);
     }
 
-    // Getter y Setter para tipo
+    // Getter y Setter 
     public String getTipo() {
         return tipo;
     }
@@ -70,12 +69,5 @@ public class Vacuna {
         if (proximaDosis != null) {
             this.proximaDosis = proximaDosis;
         }
-    }
-
-    // Método auxiliar si se desea mostrar
-    public String mostrarVacuna() {
-        return "Tipo: " + tipo + " | Lote: " + codigo +
-               " | Fecha Aplicación: " + fechaAplicacion +
-               " | Próxima dosis: " + proximaDosis;
     }
 }

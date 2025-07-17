@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controladores;
-import modelo.Mascota;
+import dto.MascotaDTO;
 import dao.MascotaDAO;
 import java.util.ArrayList;
 
@@ -30,12 +30,12 @@ public class MascotaControlador {
             return false;
         }
 
-        Mascota nueva = new Mascota(id, nombre, especie, edad);
+        MascotaDTO nueva = new MascotaDTO(id, nombre, especie, edad);
         nueva.setDocumentoProp(documentoProp);
         return dao.guardarMascota(nueva);
     }
 
-    public Mascota buscarMascota(String id) {
+    public MascotaDTO buscarMascota(String id) {
         if (id == null || id.isBlank()) {
             return null;
         }
@@ -50,7 +50,7 @@ public class MascotaControlador {
             return false;
         }
 
-        Mascota actualizada = new Mascota(id, nuevoNombre, nuevaEspecie, nuevaEdad);
+        MascotaDTO actualizada = new MascotaDTO(id, nuevoNombre, nuevaEspecie, nuevaEdad);
         return dao.editarMascota(id, actualizada);
     }
 
@@ -59,21 +59,21 @@ public class MascotaControlador {
             return false;
         }
 
-        Mascota m = dao.buscarMascota(id);
-        if (m != null) {
-            return dao.eliminarMascota(m);
+        MascotaDTO mascota = dao.buscarMascota(id);
+        if (mascota != null) {
+            return dao.eliminarMascota(mascota);
         }
         return false;
     }
     
-    public ArrayList<Mascota> buscarPorDocumentoPropietario(String documento) {
-    if (documento != null && !documento.equals("")) {
+    public ArrayList<MascotaDTO> buscarPorDocumentoPropietario(String documento) {
+    if (documento != null && !documento.isEmpty()) {
         return dao.buscarPorDocumentoPropietario(documento);
     }
     return new ArrayList<>();
 }
     
-    public ArrayList<Mascota> obtenerTodasMasc(){
+    public ArrayList<MascotaDTO> obtenerTodasMasc(){
         return dao.getMascotas();
     }
 }

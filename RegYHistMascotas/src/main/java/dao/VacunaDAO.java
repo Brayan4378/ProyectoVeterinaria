@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package dao;
-import modelo.Vacuna;
+import dto.VacunaDTO;
 import java.util.ArrayList;
 /**
  *
@@ -13,13 +13,13 @@ import java.util.ArrayList;
 public class VacunaDAO {
 
     // Lista que almacena todas las vacunas registradas
-    private ArrayList<Vacuna> vacunas = new ArrayList<>();
+    private ArrayList<VacunaDTO> vacunas = new ArrayList<>();
 
     // Constructor vacío
     public VacunaDAO() {}
 
     // Método para guardar una vacuna
-    public boolean guardarVacuna(Vacuna vacuna) {
+    public boolean guardarVacuna(VacunaDTO vacuna) {
         if (vacuna != null) {
             vacunas.add(vacuna);
             return true;
@@ -28,8 +28,8 @@ public class VacunaDAO {
     }
 
     // Buscar por tipo y codigo
-    public Vacuna buscarVacuna(String tipo, String lote) {
-        for (Vacuna v : vacunas) {
+    public VacunaDTO buscarVacuna(String tipo, String lote) {
+        for (VacunaDTO v : vacunas) {
             if (v.getTipo().equals(tipo) && v.getCodigo().equals(lote)) {
                 return v;
             }
@@ -39,7 +39,7 @@ public class VacunaDAO {
 
     // Eliminar vacuna por tipo y codigo 
     public boolean eliminarVacuna(String tipo, String lote) {
-        for (Vacuna v : vacunas) {
+        for (VacunaDTO v : vacunas) {
             if (v.getTipo().equals(tipo) && v.getCodigo().equals(lote)) {
                 vacunas.remove(v);
                 return true;
@@ -49,8 +49,8 @@ public class VacunaDAO {
     }
 
     // Editar datos de una vacuna
-    public boolean editarVacuna(String tipo, String codigo, Vacuna nueva) {
-        for (Vacuna v : vacunas) {
+    public boolean editarVacuna(String tipo, String codigo, VacunaDTO nueva) {
+        for (VacunaDTO v : vacunas) {
             if (v.getTipo().equals(tipo) && v.getCodigo().equals(codigo)) {
                 v.setFechaAplicacion(nueva.getFechaAplicacion());
                 v.setProximaDosis(nueva.getProximaDosis());
@@ -61,7 +61,7 @@ public class VacunaDAO {
     }
 
     // Obtener todas las vacunas 
-    public ArrayList<Vacuna> obtenerTodas() {
+    public ArrayList<VacunaDTO> obtenerTodas() {
         return new ArrayList<>(vacunas);
     }
 }
