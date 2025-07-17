@@ -66,13 +66,7 @@ public class MascotaControlador {
         return false;
     }
     
-    public ArrayList<MascotaDTO> buscarPorDocumentoPropietario(String documento) {
-    if (documento != null && !documento.isEmpty()) {
-        return dao.buscarPorDocumentoPropietario(documento);
-    }
-    return new ArrayList<>();
-}
-    
+   
     public ArrayList<MascotaDTO> obtenerTodasMasc(){
         return dao.getMascotas();
     }

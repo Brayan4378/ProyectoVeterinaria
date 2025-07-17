@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
  * @author BrayanOcampo
  */
 public class VentanaRegistro extends javax.swing.JFrame {
-    
+    private VentanaPrincipal menu;
     private MascotaDAO mascotaDAO;
     private PropietarioDAO propietarioDAO;
     // Controladores
@@ -33,14 +33,16 @@ public class VentanaRegistro extends javax.swing.JFrame {
      */
     public VentanaRegistro() {
 
+        this.menu = menu;
         initComponents();
         iniciarCarga();
         setTitle("Registro de Clientes");
         setLocationRelativeTo(this);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-        mascotaDAO = new MascotaDAO();
-        propietarioDAO = new PropietarioDAO();
+        
+        propietarioControlador = new PropietarioControlador();
+        mascotaControlador = new MascotaControlador();
         
         inicializarComboEspecie();
         
@@ -195,7 +197,6 @@ private void inicializarComboEspecie() {
         txtNombreMascota = new javax.swing.JTextField();
         txtDocumentoPropMascota = new javax.swing.JTextField();
         comboEspecie = new javax.swing.JComboBox<>();
-        bttBuscarMascota1 = new javax.swing.JButton();
         lblTittle = new javax.swing.JLabel();
         bttMenu = new javax.swing.JButton();
         barraCarga = new javax.swing.JProgressBar();
@@ -589,13 +590,6 @@ private void inicializarComboEspecie() {
 
         comboEspecie.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        bttBuscarMascota1.setText("Buscar por documento");
-        bttBuscarMascota1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bttBuscarMascota1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panelRegistradosLayout = new javax.swing.GroupLayout(panelRegistrados);
         panelRegistrados.setLayout(panelRegistradosLayout);
         panelRegistradosLayout.setHorizontalGroup(
@@ -626,13 +620,11 @@ private void inicializarComboEspecie() {
                     .addGroup(panelRegistradosLayout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(bttBuscarMascota)
-                        .addGap(38, 38, 38)
-                        .addComponent(bttBuscarMascota1)
-                        .addGap(34, 34, 34)
+                        .addGap(59, 59, 59)
                         .addComponent(bttEliminarMasc)
-                        .addGap(46, 46, 46)
+                        .addGap(113, 113, 113)
                         .addComponent(bttEditarMas)
-                        .addGap(29, 29, 29)
+                        .addGap(57, 57, 57)
                         .addComponent(bttActualizarMasc)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -665,7 +657,6 @@ private void inicializarComboEspecie() {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(panelRegistradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bttBuscarMascota)
-                    .addComponent(bttBuscarMascota1)
                     .addComponent(bttEliminarMasc)
                     .addComponent(bttEditarMas)
                     .addComponent(bttActualizarMasc))
@@ -737,33 +728,13 @@ private void inicializarComboEspecie() {
     private void bttMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttMenuActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
+        if(menu == null || menu.isDisplayable()){
+            menu = new VentanaPrincipal();
+        }
+        menu.setLocationRelativeTo(this);
+        menu.toFront();
+        menu.setVisible(true);
     }//GEN-LAST:event_bttMenuActionPerformed
-
-    private void bttBuscarMascota1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttBuscarMascota1ActionPerformed
-        // TODO add your handling code here:
-        String documento = JOptionPane.showInputDialog(this, "Ingrese el documento del propietario:");
-        if (documento == null || documento.equals("")) {
-            JOptionPane.showMessageDialog(this, "Debe ingresar un documento válido.");
-            return;
-        }
-        ArrayList<MascotaDTO> resultado = mascotaControlador.buscarPorDocumentoPropietario(documento);
-
-        if (resultado.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "No se encontraron mascotas para este documento.");
-        } else {
-            DefaultTableModel modelo = (DefaultTableModel) tablaMasc.getModel();
-            modelo.setRowCount(0); // Limpiar la tabla
-            for (MascotaDTO m : resultado) {
-                modelo.addRow(new Object[]{
-                    m.getId(),
-                    m.getNombre(),
-                    m.getEspecie(),
-                    m.getEdad(),
-                    m.getDocumentoProp()
-                });
-            }
-        }
-    }//GEN-LAST:event_bttBuscarMascota1ActionPerformed
 
     private void bttActualizarMascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttActualizarMascActionPerformed
         // TODO add your handling code here:
@@ -819,7 +790,7 @@ private void inicializarComboEspecie() {
     private void bttBuscarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttBuscarMascotaActionPerformed
         // TODO add your handling code here:
         String id = txtIDMascota.getText();
-        if (id.isBlank()) {
+        if (id == null || id.isBlank()) {
             JOptionPane.showMessageDialog(this, "Ingrese el ID de la mascota.");
             return;
         }
@@ -827,6 +798,9 @@ private void inicializarComboEspecie() {
         if (m != null) {
             JOptionPane.showMessageDialog(this, "Mascota encontrada:\nNombre: " + m.getNombre()
                 + "\nEspecie: " + m.getEspecie() + "\nEdad: " + m.getEdad());
+            txtNombreMascota.setText(m.getNombre());
+            txtDocumentoPropMascota.setText(m.getDocumentoProp());
+            comboEspecie.setToolTipText(m.getEspecie());
         } else {
             JOptionPane.showMessageDialog(this, "Mascota no encontrada.");
         }
@@ -1004,7 +978,6 @@ private void inicializarComboEspecie() {
     private javax.swing.JButton bttActualizarMasc;
     private javax.swing.JButton bttActualizarProp;
     private javax.swing.JButton bttBuscarMascota;
-    private javax.swing.JButton bttBuscarMascota1;
     private javax.swing.JButton bttBuscarProp;
     private javax.swing.JButton bttEditarMas;
     private javax.swing.JButton bttEditarProp;

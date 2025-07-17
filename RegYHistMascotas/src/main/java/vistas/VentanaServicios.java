@@ -204,7 +204,6 @@ public class VentanaServicios extends javax.swing.JFrame {
     private void bttMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttMenuActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        
     }//GEN-LAST:event_bttMenuActionPerformed
 
     /**

@@ -63,15 +63,5 @@ public class MascotaDAO {
     return false;
 }
    
-   public ArrayList<MascotaDTO> buscarPorDocumentoPropietario(String documento) {
-        ArrayList<MascotaDTO> resultado = new ArrayList<>();
-        for (MascotaDTO m : mascotas) {
-            if (m.getDocumentoProp().equals(documento)) {
-                resultado.add(m);
-            }
-        }
-        return resultado;
-    }
-   
     
 }
