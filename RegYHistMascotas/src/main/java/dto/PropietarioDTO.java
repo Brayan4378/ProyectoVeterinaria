@@ -56,4 +56,20 @@ public class PropietarioDTO extends PersonaDTO {
         return telefono;
     }
     
+    public static PropietarioDTO desdeLineaArchivo(String linea) {
+        String[] partes = linea.split(",");
+        if (partes.length != 3) return null; // nombre, documento, telefono
+        try {
+            String nombre = partes[0].trim();
+            String documento = partes[1].trim();
+            String telefono = partes[2].trim();
+            return new PropietarioDTO(nombre, documento, telefono);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+    
+    public String toLineaArchivo() {
+        return nombre + "," + documento + "," + telefono;
+    }
 }

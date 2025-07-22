@@ -49,6 +49,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         bttRegistrarCliente = new javax.swing.JButton();
         lblRG = new javax.swing.JLabel();
         lblRG1 = new javax.swing.JLabel();
+        lblRG2 = new javax.swing.JLabel();
+        bttSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,25 +88,42 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         lblRG1.setText("Para registrar un nuevo usuario, haga clic en el botón:");
 
+        lblRG2.setText("Para cerrar el sistema, haga clic en el botón:");
+
+        bttSalir.setBackground(new java.awt.Color(204, 255, 255));
+        bttSalir.setFont(new java.awt.Font("Dialog", 3, 24)); // NOI18N
+        bttSalir.setText("Cerrar sistema");
+        bttSalir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 204, 255)));
+        bttSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttSalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelSecundarioLayout = new javax.swing.GroupLayout(panelSecundario);
         panelSecundario.setLayout(panelSecundarioLayout);
         panelSecundarioLayout.setHorizontalGroup(
             panelSecundarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelSecundarioLayout.createSequentialGroup()
-                .addGroup(panelSecundarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelSecundarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelSecundarioLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(lblRG1))
                     .addGroup(panelSecundarioLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addGroup(panelSecundarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelSecundarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bttSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bttRegistrarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bttServicios, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panelSecundarioLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(lblRG1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(bttServicios, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(36, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSecundarioLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblRG, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55))
+                .addComponent(lblRG2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSecundarioLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblRG)
+                .addGap(85, 85, 85))
         );
         panelSecundarioLayout.setVerticalGroup(
             panelSecundarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,7 +136,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(lblRG)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bttServicios, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(lblRG2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bttSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
@@ -141,8 +164,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(separador, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelSecundario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(panelSecundario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -177,6 +200,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ventanaServicios.toFront();
         ventanaServicios.setVisible(true);
     }//GEN-LAST:event_bttServiciosActionPerformed
+
+    private void bttSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttSalirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_bttSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,9 +244,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bttRegistrarCliente;
+    private javax.swing.JButton bttSalir;
     private javax.swing.JButton bttServicios;
     private javax.swing.JLabel lblRG;
     private javax.swing.JLabel lblRG1;
+    private javax.swing.JLabel lblRG2;
     private javax.swing.JLabel lblTittle;
     private javax.swing.JPanel panelPrincipal;
     private javax.swing.JPanel panelSecundario;

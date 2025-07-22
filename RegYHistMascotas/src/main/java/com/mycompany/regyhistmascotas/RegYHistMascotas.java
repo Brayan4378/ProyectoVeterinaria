@@ -17,6 +17,7 @@ public class RegYHistMascotas {
         javax.swing.SwingUtilities.invokeLater(() ->{
           VentanaPrincipal vp = new VentanaPrincipal();
           vp.setVisible(true);
+            System.out.println(System.getProperty("user.dir"));
         });
     }
     

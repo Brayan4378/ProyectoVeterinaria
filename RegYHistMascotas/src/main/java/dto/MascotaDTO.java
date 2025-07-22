@@ -20,7 +20,7 @@ public class MascotaDTO {
     private String documentoProp;
 
     //Constructor
-    public MascotaDTO( String id, String nombre, String especie, int edad) {
+    public MascotaDTO( String id, String nombre, String especie, int edad, String documentoProp) {
         /*this.nombre = nombre;
         this.especie = especie;
         this.edad = edad;*/
@@ -29,6 +29,7 @@ public class MascotaDTO {
         setEspecie(especie);
         setEdad(edad);
         setId(id);
+        setDocumentoProp(documentoProp);
     }
 
     //Método para agregar una consulta
@@ -113,5 +114,19 @@ public class MascotaDTO {
             throw new IllegalArgumentException("Documento invalido, revise bien su documento");
         }
         this.documentoProp = documentoProp;
+    }
+    
+    public static MascotaDTO desdeLineaArchivo(String linea) {
+        String[] partes = linea.split(",");
+        if (partes.length != 5) return null; // Ahora se esperan 4 partes: id, nombre, especie, edad
+            try {
+            int edad = Integer.parseInt(partes[3]);
+            return new MascotaDTO(partes[0], partes[1], partes[2], edad, partes[4]);
+        } catch (NumberFormatException e) {
+            return null;
+    }
+}
+    public String toLineaArchivo() {
+    return id + "," + nombre + "," + especie + "," + edad + "," + documentoProp;
     }
 }

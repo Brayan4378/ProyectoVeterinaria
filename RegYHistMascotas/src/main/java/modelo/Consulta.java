@@ -19,6 +19,7 @@ public class Consulta {
     private LocalDate fecha;
     private String diagnostico;
     private String tratamiento;
+    private String idMascota;
     private String documentoProCons;
     private String nombreMascCons;
     //Constructor que recibe código y fecha en texto
@@ -113,4 +114,9 @@ public class Consulta {
     }
     this.fecha = fecha;  
     }
+
+    public String getIdMascota() {
+        return idMascota;
+    }  
+    
 }

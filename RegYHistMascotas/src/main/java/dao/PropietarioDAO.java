@@ -4,8 +4,13 @@
  */
 package dao;
 
+
+import dto.PersonaDTO;
 import java.util.ArrayList;
 import dto.PropietarioDTO;
+import java.util.AbstractList;
+import java.util.List;
+import persistencia.*;
 
 /**
  *
@@ -13,11 +18,18 @@ import dto.PropietarioDTO;
  */
 public class PropietarioDAO {
     
-     private ArrayList<PropietarioDTO> propietarios = new ArrayList<>();
+    private ArchivoManager archivo;
+    private ArrayList<PropietarioDTO> propietarios = new ArrayList<>();
 
     public PropietarioDAO() {
+        archivo = new ArchivoManager("data/propietarios.data");
+        propietarios = obtenerTodos();
     }
 
+        public void guardarEnArchivo(PropietarioDTO propietario) {
+        archivo.escribirLinea(propietario.toLineaArchivo());
+    }
+        
     public boolean guardarPropietario(PropietarioDTO propietario){
         for (PropietarioDTO p : propietarios) {
             if (p.getDocumento().equals(propietario.getDocumento()) || p.getDocumento().equals(-1) || p.getDocumento().equals(200000000)) {
@@ -25,6 +37,7 @@ public class PropietarioDAO {
             }
         }
         propietarios.add(propietario);
+        guardarEnArchivo(propietario);
         return true;
     }
 
@@ -41,6 +54,7 @@ public class PropietarioDAO {
         for (PropietarioDTO p : propietarios) {
             if (p.getDocumento().equals(documento)) {
                 propietarios.remove(p);
+                
                 return true;
             }
         }
@@ -58,8 +72,23 @@ public class PropietarioDAO {
         return false;
     }
     
-    public ArrayList<PropietarioDTO> obtenerTodos() {
-        return new ArrayList<>(propietarios); // copia defensiva
+    public ArrayList<PropietarioDTO> obtenerTodos(){
+        ArrayList<PropietarioDTO> lista = new ArrayList<>();
+        List<String> lineas = archivo.leerLineas();
+        
+        for (String linea : lineas) {
+            PropietarioDTO propietario = PropietarioDTO.desdeLineaArchivo(linea);
+            lista.add(propietario);
+        }
+        return lista;
+    }
+    
+    public void sobreescribirLista(ArrayList<PropietarioDTO> propietarios){
+        List<String> lineas = new ArrayList<>();
+        for (PropietarioDTO p : propietarios) {
+            lineas.add(p.toLineaArchivo());
+        }
+        archivo.sobrescribirArchivo(lineas);
     }
 }
 

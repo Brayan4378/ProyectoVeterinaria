@@ -22,6 +22,7 @@ public class MascotaControlador {
 
     public boolean registrarMascota(String id, String nombre, String especie, int edad, String documentoProp) {
         // Validaciones simples usando if y &&
+        MascotaDTO existente = dao.buscarPorId(id);
         if ((id == null || id.isBlank()) ||
             (nombre == null || nombre.isBlank()) ||
             (especie == null || especie.isBlank()) ||
@@ -30,9 +31,12 @@ public class MascotaControlador {
             return false;
         }
 
-        MascotaDTO mascota = new MascotaDTO(id, nombre, especie, edad);
-        mascota.setDocumentoProp(documentoProp);
-        return dao.guardarMascota(mascota);
+        if (existente == null) {
+            MascotaDTO mascota = new MascotaDTO(id, nombre, especie, edad, documentoProp);
+            mascota.setDocumentoProp(documentoProp);
+            return dao.guardarMascota(mascota);
+        }
+        return false;
     }
 
     public MascotaDTO buscarMascota(String id) {
@@ -46,12 +50,17 @@ public class MascotaControlador {
         if ((id == null || id.isBlank()) ||
             (nuevoNombre == null || nuevoNombre.isBlank()) ||
             (nuevaEspecie == null || nuevaEspecie.isBlank()) ||
-            (nuevaEdad < 0)) {
+            (nuevaEdad < 0) ) {
             return false;
         }
 
-        MascotaDTO actualizada = new MascotaDTO(id, nuevoNombre, nuevaEspecie, nuevaEdad);
-        return dao.editarMascota(id,actualizada);
+        MascotaDTO mascotaExistente = dao.buscarPorId(id);
+        if (mascotaExistente == null) {
+            return false;
+        }
+        
+        MascotaDTO actualizada = new MascotaDTO(id, nuevoNombre, nuevaEspecie, nuevaEdad, mascotaExistente.getDocumentoProp());
+            return dao.editarMascota(id, actualizada);
     }
 
     public boolean eliminarMascota(String id) {
@@ -66,9 +75,12 @@ public class MascotaControlador {
         return false;
     }
     
+    public MascotaDTO buscarPorIdYDocumento(String id, String documentoProp) {
+        return dao.buscarPorIdYDocumento(id, documentoProp);
+}
    
     public ArrayList<MascotaDTO> obtenerTodasMasc(){
-        return dao.getMascotas();
+        return dao.obtenerTodas();
     }
 }
 
