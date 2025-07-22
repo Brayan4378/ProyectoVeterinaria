@@ -30,9 +30,9 @@ public class MascotaControlador {
             return false;
         }
 
-        MascotaDTO nueva = new MascotaDTO(id, nombre, especie, edad);
-        nueva.setDocumentoProp(documentoProp);
-        return dao.guardarMascota(nueva);
+        MascotaDTO mascota = new MascotaDTO(id, nombre, especie, edad);
+        mascota.setDocumentoProp(documentoProp);
+        return dao.guardarMascota(mascota);
     }
 
     public MascotaDTO buscarMascota(String id) {
@@ -51,7 +51,7 @@ public class MascotaControlador {
         }
 
         MascotaDTO actualizada = new MascotaDTO(id, nuevoNombre, nuevaEspecie, nuevaEdad);
-        return dao.editarMascota(id, actualizada);
+        return dao.editarMascota(id,actualizada);
     }
 
     public boolean eliminarMascota(String id) {

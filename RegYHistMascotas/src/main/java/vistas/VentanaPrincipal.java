@@ -23,10 +23,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
         setTitle("Sistema de Gestión Clínica Veterinaria");
-        setLocationRelativeTo(this);
+        setLocationRelativeTo(null);
         setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
+        ventanaRegistro = new VentanaRegistro(this);
+        ventanaServicios = new VentanaServicios(this);
+        ventanaRegistro.setVisible(false);
+        ventanaServicios.setVisible(false);
     }
 
     /**
@@ -161,20 +164,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void bttRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttRegistrarClienteActionPerformed
         // TODO add your handling code here:
-        if (ventanaRegistro == null || !ventanaRegistro.isDisplayable()) {
-            ventanaRegistro = new VentanaRegistro();
-        }
-        ventanaRegistro.setLocationRelativeTo(this); // Centrar respecto a principal
+        this.setVisible(false);
+        ventanaRegistro.setLocationRelativeTo(null); // Centrar respecto a principal
         ventanaRegistro.toFront();
         ventanaRegistro.setVisible(true);
     }//GEN-LAST:event_bttRegistrarClienteActionPerformed
 
     private void bttServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttServiciosActionPerformed
         // TODO add your handling code here:
-        if (ventanaServicios == null || !ventanaServicios.isDisplayable()) {
-            ventanaServicios = new VentanaServicios();
-        }
-        ventanaServicios.setLocationRelativeTo(this);
+        this.setVisible(false);
+        ventanaServicios.setLocationRelativeTo(null);
         ventanaServicios.toFront();
         ventanaServicios.setVisible(true);
     }//GEN-LAST:event_bttServiciosActionPerformed
@@ -209,7 +208,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPrincipal().setVisible(true);
+                VentanaPrincipal ventana = new VentanaPrincipal();
+            ventana.setVisible(true);
             }
         });
     }

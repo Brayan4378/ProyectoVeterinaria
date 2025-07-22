@@ -40,7 +40,7 @@ public class VentanaMedicina extends javax.swing.JFrame {
         public void agregarDatosTabla() {
             // Obtener el modelo actual de la tabla
             DefaultTableModel modelo = (DefaultTableModel) tablaConsultas.getModel();
-            // Lista de consultas que quieres mostrar (esta debe venir de otro lugar, no crearla vacía aquí)
+            // Lista de consultas 
             ArrayList<Consulta> lista = consultaControlador.obtenerTodas(); // Método que debe devolverte las consultas reales
             // Recorrer la lista y agregar cada consulta como una fila en la tabla
                 for (Consulta cons : lista) {
@@ -382,6 +382,7 @@ public class VentanaMedicina extends javax.swing.JFrame {
     if (consultaControlador.registrarConsulta(codigo, LocalDate.now(), diagnostico, tratamiento, documentoProCons, nombreMascCons)) {
         JOptionPane.showMessageDialog(this, "Consulta registrada con código: " + codigo);
         agregarDatosTabla(); 
+        limpiarCampos();
     } else {
         JOptionPane.showMessageDialog(this, "Error al registrar consulta.");
     }
@@ -395,7 +396,7 @@ public class VentanaMedicina extends javax.swing.JFrame {
 
     private void bttMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttMenuActionPerformed
         // TODO add your handling code here:
-    this.dispose(); // Cierra la ventana actual
+    this.setVisible(false); // Cierra la ventana actual
     menu.setVisible(true); // Muestra el menú
     }//GEN-LAST:event_bttMenuActionPerformed
 
@@ -432,11 +433,6 @@ public class VentanaMedicina extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-               new VentanaMedicina(new VentanaServicios()).setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

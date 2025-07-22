@@ -1,7 +1,6 @@
 modelo\Propietario.class
 modelo\Historial.class
 dao\MascotaDAO.class
-vistas\VentanaServicios$3.class
 dto\PersonaDTO.class
 dto\MascotaDTO.class
 vistas\VentanaRegistro$5.class
@@ -13,7 +12,6 @@ vistas\VentanaRegistro$8.class
 modelo\Vacuna.class
 vistas\VentanaPrincipal$3.class
 controladores\VacunaControlador.class
-vistas\VentanaRegistro$12.class
 vistas\VentanaRegistro$4.class
 com\mycompany\regyhistmascotas\RegYHistMascotas.class
 dto\VacunaDTO.class
@@ -31,14 +29,12 @@ dto\PropietarioDTO.class
 herramientas\IDGenerator.class
 vistas\VentanaVacuna.class
 dao\PropietarioDAO.class
-vistas\VentanaMedicina$5.class
 vistas\VentanaRegistro$10.class
 vistas\VentanaMedicina.class
 vistas\VentanaRegistro$3.class
 vistas\VentanaRegistro$6.class
 dto\VeterinarioDTO.class
 vistas\VentanaVacuna$3.class
-vistas\VentanaRegistro$13.class
 vistas\VentanaRegistro.class
 dao\VacunaDAO.class
 modelo\Consulta.class

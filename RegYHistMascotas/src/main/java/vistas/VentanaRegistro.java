@@ -5,7 +5,6 @@
 
 package vistas;
 import dto.MascotaDTO;
-import dto.PersonaDTO;
 import controladores.MascotaControlador;
 import controladores.PropietarioControlador;
 import dao.*;
@@ -14,6 +13,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import herramientas.IDGenerator;
 
 
 /**
@@ -31,8 +31,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
     /**
      * Creates new form VentanaRegistro
      */
-    public VentanaRegistro() {
-
+    public VentanaRegistro(VentanaPrincipal menu) {
         this.menu = menu;
         initComponents();
         iniciarCarga();
@@ -152,8 +151,6 @@ private void inicializarComboEspecie() {
         jScrollPane1 = new javax.swing.JScrollPane();
         txAMens = new javax.swing.JTextArea();
         bttRegistrarMasc = new javax.swing.JButton();
-        lbBlId1 = new javax.swing.JLabel();
-        txtId = new javax.swing.JTextField();
         comboEspecie1 = new javax.swing.JComboBox<>();
         lblDocProp = new javax.swing.JLabel();
         txtDocProp = new javax.swing.JTextField();
@@ -240,9 +237,6 @@ private void inicializarComboEspecie() {
             }
         });
 
-        lbBlId1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbBlId1.setText("Id:");
-
         comboEspecie1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblDocProp.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -255,8 +249,15 @@ private void inicializarComboEspecie() {
             .addGroup(panelRegistroLayout.createSequentialGroup()
                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelRegistroLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(lblInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRegistroLayout.createSequentialGroup()
                         .addGap(16, 16, 16)
-                        .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelRegistroLayout.createSequentialGroup()
+                                .addComponent(lblDocProp)
+                                .addGap(2, 2, 2)
+                                .addComponent(txtDocProp, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
                             .addGroup(panelRegistroLayout.createSequentialGroup()
                                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(lblEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -265,28 +266,12 @@ private void inicializarComboEspecie() {
                                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelRegistroLayout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtEdad))
+                                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(panelRegistroLayout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
                                         .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(panelRegistroLayout.createSequentialGroup()
-                                                .addGap(6, 6, 6)
-                                                .addComponent(comboEspecie1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(panelRegistroLayout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addGroup(panelRegistroLayout.createSequentialGroup()
-                                .addComponent(lbBlId1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(panelRegistroLayout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(lblInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelRegistroLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(lblDocProp)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDocProp, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)))
+                                            .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(comboEspecie1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,11 +290,7 @@ private void inicializarComboEspecie() {
                     .addGroup(panelRegistroLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(lblInfo)
-                        .addGap(31, 31, 31)
-                        .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbBlId1))
-                        .addGap(18, 18, 18)
+                        .addGap(37, 37, 37)
                         .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNombre)
                             .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -318,14 +299,14 @@ private void inicializarComboEspecie() {
                             .addComponent(lblEspecie)
                             .addComponent(comboEspecie1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblEdad)
                             .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblDocProp)
                             .addComponent(txtDocProp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 16, Short.MAX_VALUE))
+                        .addGap(0, 50, Short.MAX_VALUE))
                     .addGroup(panelRegistroLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(jScrollPane1)
@@ -728,9 +709,6 @@ private void inicializarComboEspecie() {
     private void bttMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttMenuActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        if(menu == null || menu.isDisplayable()){
-            menu = new VentanaPrincipal();
-        }
         menu.setLocationRelativeTo(this);
         menu.toFront();
         menu.setVisible(true);
@@ -887,7 +865,7 @@ private void inicializarComboEspecie() {
 
     private void bttRegistrarMascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttRegistrarMascActionPerformed
         // TODO add your handling code here:
-        String id = txtId.getText().trim();
+        String id = IDGenerator.generarCodigoMascota();
         String nombre = txtNombre.getText().trim();
         String especie = (String) comboEspecie.getSelectedItem();
         String edadTexto = txtEdad.getText().trim();
@@ -914,14 +892,14 @@ private void inicializarComboEspecie() {
             return;
         }
 
-        // Crear mascota y asociar documento del propietario
+        // Crear mascota y asociar al documento del propietario
         MascotaDTO nueva = new MascotaDTO(id, nombre, especie, edad);
         nueva.setDocumentoProp(documentoProp);
 
         boolean exito = mascotaControlador.registrarMascota(id, nombre, especie, edad, documentoProp);
 
         if (exito) {
-            JOptionPane.showMessageDialog(this, "Mascota registrada exitosamente.");
+            JOptionPane.showMessageDialog(this, "Mascota registrada exitosamente, ID:" + id);
             actualizarTablaMascotas(); // Método que vuelve a llenar la tabla
             limpiarCampos(); // Método opcional para limpiar los campos
         } else {
@@ -934,7 +912,6 @@ private void inicializarComboEspecie() {
         txtDoc.setText(null);
         txtNomProp.setText(null);
         txtTel.setText(null);
-        txtId.setText(null);
         txtNombre.setText(null);
         txtEdad.setText(null);
     }
@@ -966,11 +943,6 @@ private void inicializarComboEspecie() {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VentanaRegistro().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1003,7 +975,6 @@ private void inicializarComboEspecie() {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JLabel lbBlId1;
     private javax.swing.JLabel lblDocProp;
     private javax.swing.JLabel lblDocumento;
     private javax.swing.JLabel lblEdad;
@@ -1029,7 +1000,6 @@ private void inicializarComboEspecie() {
     private javax.swing.JTextField txtDocumentoPropietario;
     private javax.swing.JTextField txtEdad;
     private javax.swing.JTextField txtIDMascota;
-    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNomProp;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtNombreMascota;

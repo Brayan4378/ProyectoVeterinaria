@@ -18,19 +18,23 @@ import javax.swing.tree.TreePath;
  */
 public class VentanaServicios extends javax.swing.JFrame {
 
-    private VentanaServicios menu;
+    private VentanaPrincipal menu;
+    private VentanaMedicina ventanaMedicina;
+    private VentanaVacuna ventanaVacuna;
     /**
      * Creates new form VentanaServicios
      */
-    public VentanaServicios() {
+    public VentanaServicios(VentanaPrincipal menu) {
         this.menu = menu;
         initComponents();
         iniciarCarga();
         setTitle("Servicios");
         setSize(700, 500);
         setLocationRelativeTo(this);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(HIDE_ON_CLOSE);
         setVisible(true);
+        VentanaVacuna ventanaVacuna = new VentanaVacuna(this);
+        VentanaMedicina ventanaMedicina = new VentanaMedicina(this);
 
         // Crear el nodo raíz del árbol con el nombre "Carpeta"
         DefaultMutableTreeNode carpeta = new DefaultMutableTreeNode("Carpeta");
@@ -66,10 +70,10 @@ public class VentanaServicios extends javax.swing.JFrame {
             switch (nodoSeleccionado) {
                 
                 // Abrir la ventana para servicios de medicina general
-                case "Medicina General" -> new VentanaMedicina(VentanaServicios.this).setVisible(true);
+                case "Medicina General" ->  ventanaMedicina.setVisible(true);
                     
                 // Abrir la ventana para servicios de vacunación
-                case "Vacuna" -> new VentanaVacuna(VentanaServicios.this).setVisible(true);
+                case "Vacuna" -> ventanaVacuna.setVisible(true);
                    
                 // Cerrar la ventana
                 case "Salir" -> VentanaServicios.this.dispose();
@@ -204,6 +208,7 @@ public class VentanaServicios extends javax.swing.JFrame {
     private void bttMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttMenuActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
+        menu.setVisible(true);
     }//GEN-LAST:event_bttMenuActionPerformed
 
     /**
@@ -234,11 +239,6 @@ public class VentanaServicios extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VentanaServicios().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

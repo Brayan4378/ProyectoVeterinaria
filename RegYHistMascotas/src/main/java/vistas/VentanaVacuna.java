@@ -25,6 +25,7 @@ public class VentanaVacuna extends javax.swing.JFrame {
         initComponents(); 
         setTitle("Servicio de Vacunación");
         setLocationRelativeTo(this);
+        
     }
 
     
@@ -230,17 +231,16 @@ public class VentanaVacuna extends javax.swing.JFrame {
             return;
         }
         // Verificar que exista la mascota con ese documento
-        MascotaDTO mascota = mascotaControlador.buscarMascota(tipo);
+        MascotaDTO mascota = mascotaControlador.buscarMascota(nombreMascota);
         if (mascota == null) {
             JOptionPane.showMessageDialog(null, "No se encontró la mascota con esos datos.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        VacunaDTO vacuna = new VacunaDTO(tipo, codigo, LocalDate.now(), LocalDate.MIN);
+        VacunaDTO vacuna = new VacunaDTO(tipo, codigo, LocalDate.now(), LocalDate.MAX);
         vacuna.setTipo(tipo);
-        vacuna.setCodigo(codigo);
-        vacuna.setFechaAplicacion(LocalDate.parse(fecha));
+        vacuna.setFechaAplicacion(LocalDate.now());
         vacuna.setProximaDosis(LocalDate.parse(proxima));
-        boolean guardada = vacunaControlador.registrarVacuna(tipo, codigo, LocalDate.now(), LocalDate.MIN);
+        boolean guardada = vacunaControlador.registrarVacuna(tipo, codigo, LocalDate.now(), LocalDate.MAX);
         if (guardada) {
             JOptionPane.showMessageDialog(null, "Vacuna registrada con éxito.");
             limpiarCampos();
@@ -256,7 +256,7 @@ public class VentanaVacuna extends javax.swing.JFrame {
 
     private void bttMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttMenuActionPerformed
         // TODO add your handling code here:
-        this.dispose(); // Cierra la ventana actual
+        this.setVisible(false); // Cierra la ventana actual
         menu.setVisible(true); // Muestra el menú
     }//GEN-LAST:event_bttMenuActionPerformed
 
@@ -288,9 +288,6 @@ public class VentanaVacuna extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new VentanaVacuna(new VentanaServicios()).setVisible(true);
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
