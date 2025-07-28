@@ -6,8 +6,6 @@ import modelo.*;
 
 
 /**
- * Clase principal que gestiona el registro y visualización de propietarios,
- * mascotas y consultas médicas en una clínica veterinaria.
  * 
  * @author BrayanOcampo
  */

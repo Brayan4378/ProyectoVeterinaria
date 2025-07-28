@@ -4,45 +4,40 @@
  */
 package dao;
 
-
-import dto.PersonaDTO;
-import java.util.ArrayList;
 import dto.PropietarioDTO;
-import java.util.AbstractList;
-import java.util.List;
-import persistencia.*;
+import java.util.ArrayList;
+import Gestor.Gestor;
 
 /**
  *
- * @author BrayanOcampo
+ * @author Brayan
  */
 public class PropietarioDAO {
-    
-    private ArchivoManager archivo;
-    private ArrayList<PropietarioDTO> propietarios = new ArrayList<>();
+
+    private final String RUTA = "data/propietarios.dat";
+    private final Gestor<PropietarioDTO> serializador;
 
     public PropietarioDAO() {
-        archivo = new ArchivoManager("data/propietarios.data");
-        propietarios = obtenerTodos();
+        this.serializador = Gestor.getInstancia();
     }
 
-        public void guardarEnArchivo(PropietarioDTO propietario) {
-        archivo.escribirLinea(propietario.toLineaArchivo());
-    }
-        
-    public boolean guardarPropietario(PropietarioDTO propietario){
-        for (PropietarioDTO p : propietarios) {
-            if (p.getDocumento().equals(propietario.getDocumento()) || p.getDocumento().equals(-1) || p.getDocumento().equals(200000000)) {
-                return false;
+    // Guardar un nuevo propietario
+    public boolean guardarPropietario(PropietarioDTO nuevo) {
+        ArrayList<PropietarioDTO> lista = cargarTodos();
+        for (PropietarioDTO p : lista) {
+            if (p.getDocumento().equals(nuevo.getDocumento())) {
+                return false; // Ya existe
             }
         }
-        propietarios.add(propietario);
-        guardarEnArchivo(propietario);
+        lista.add(nuevo);
+        serializador.guardar(RUTA, lista);
         return true;
     }
 
+    // Buscar propietario por documento
     public PropietarioDTO buscarPropietario(String documento) {
-        for (PropietarioDTO p : propietarios) {
+        ArrayList<PropietarioDTO> lista = cargarTodos();
+        for (PropietarioDTO p : lista) {
             if (p.getDocumento().equals(documento)) {
                 return p;
             }
@@ -50,45 +45,39 @@ public class PropietarioDAO {
         return null;
     }
 
-    public boolean eliminarPropietario(String documento){
-        for (PropietarioDTO p : propietarios) {
-            if (p.getDocumento().equals(documento)) {
-                propietarios.remove(p);
-                
+    // Editar propietario existente
+    public boolean editarPropietario(String documentoActual, PropietarioDTO actualizado) {
+        ArrayList<PropietarioDTO> lista = cargarTodos();
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getDocumento().equals(documentoActual)) {
+                lista.set(i, actualizado);
+                serializador.guardar(RUTA, lista);
                 return true;
             }
         }
         return false;
     }
 
-    public boolean editarPropietario(String documento, PropietarioDTO nuevoPropietario) {
-        for (PropietarioDTO p : propietarios) {
-            if (p.getDocumento().equals(documento)) {
-                p.setNombre(nuevoPropietario.getNombre());
-                p.setTelefono(nuevoPropietario.getTelefono());
+    // Eliminar propietario
+    public boolean eliminarPropietario(String documento) {
+        ArrayList<PropietarioDTO> lista = cargarTodos();
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getDocumento().equals(documento)) {
+                lista.remove(i);
+                serializador.guardar(RUTA, lista);
                 return true;
             }
         }
         return false;
     }
-    
-    public ArrayList<PropietarioDTO> obtenerTodos(){
-        ArrayList<PropietarioDTO> lista = new ArrayList<>();
-        List<String> lineas = archivo.leerLineas();
-        
-        for (String linea : lineas) {
-            PropietarioDTO propietario = PropietarioDTO.desdeLineaArchivo(linea);
-            lista.add(propietario);
-        }
-        return lista;
+
+    // Obtener todos los propietarios
+    public ArrayList<PropietarioDTO> obtenerTodos() {
+        return cargarTodos();
     }
-    
-    public void sobreescribirLista(ArrayList<PropietarioDTO> propietarios){
-        List<String> lineas = new ArrayList<>();
-        for (PropietarioDTO p : propietarios) {
-            lineas.add(p.toLineaArchivo());
-        }
-        archivo.sobrescribirArchivo(lineas);
+
+    // Cargar todos los propietarios desde archivo
+    private ArrayList<PropietarioDTO> cargarTodos() {
+        return serializador.cargar(RUTA);
     }
 }
-

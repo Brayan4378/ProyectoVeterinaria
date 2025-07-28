@@ -3,12 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelo;
-
+import java.io.*;
 // import java.util.ArrayList;
 
 
-public class Mascota {
+public class Mascota implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     //Atributos encapsulados
     private String nombre;
     private String especie;

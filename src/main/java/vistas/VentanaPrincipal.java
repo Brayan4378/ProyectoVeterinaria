@@ -1,6 +1,7 @@
 package vistas;
 
 import java.awt.BorderLayout;
+import javax.swing.JOptionPane;
 import vistas.VentanaRegistro;
 
 /*

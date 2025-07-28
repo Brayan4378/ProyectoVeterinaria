@@ -4,14 +4,14 @@
  */
 package modelo;
 
-import java.util.ArrayList;
-
+import java.io.*;
 /**
  *
  * @author BrayanOcampo
  */
-public class Propietario extends Persona {
+public class Propietario implements Serializable{
     
+    private static final long serialVersionUID = 1L;
     //Atributos protegidos de la clase propietario
     private String nombre;
     /*private int documento;
@@ -22,7 +22,7 @@ public class Propietario extends Persona {
 
     //Constructor de la clase Propietario, recibe nombre, documento y teléfono
     public Propietario(String nombre, String documento, String telefono) {
-        super(nombre);
+        setNombre(nombre);
         /*this.nombre = nombre;
         this.documento = documento;
         this.telefono = telefono;*/
@@ -59,7 +59,6 @@ public class Propietario extends Persona {
     }
 }*/
     
-    @Override
     public void setNombre(String nombre) {
         //this.nombre = nombre;
         if(nombre == null || nombre.isBlank()){
@@ -90,7 +89,6 @@ public class Propietario extends Persona {
         return new ArrayList<>(mascotas);
     }*/
 
-    @Override
     public String getNombre() {
         return nombre;
     }

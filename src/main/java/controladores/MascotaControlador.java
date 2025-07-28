@@ -21,8 +21,6 @@ public class MascotaControlador {
     }
 
     public boolean registrarMascota(String id, String nombre, String especie, int edad, String documentoProp) {
-        // Validaciones simples usando if y &&
-        MascotaDTO existente = dao.buscarPorId(id);
         if ((id == null || id.isBlank()) ||
             (nombre == null || nombre.isBlank()) ||
             (especie == null || especie.isBlank()) ||
@@ -31,9 +29,9 @@ public class MascotaControlador {
             return false;
         }
 
+        MascotaDTO existente = dao.buscarMascota(id);
         if (existente == null) {
             MascotaDTO mascota = new MascotaDTO(id, nombre, especie, edad, documentoProp);
-            mascota.setDocumentoProp(documentoProp);
             return dao.guardarMascota(mascota);
         }
         return false;
@@ -54,7 +52,7 @@ public class MascotaControlador {
             return false;
         }
 
-        MascotaDTO mascotaExistente = dao.buscarPorId(id);
+        MascotaDTO mascotaExistente = dao.buscarMascota(id);
         if (mascotaExistente == null) {
             return false;
         }
@@ -67,7 +65,6 @@ public class MascotaControlador {
         if (id == null || id.isBlank()) {
             return false;
         }
-
         MascotaDTO mascota = dao.buscarMascota(id);
         if (mascota != null) {
             return dao.eliminarMascota(mascota);

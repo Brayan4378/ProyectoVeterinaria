@@ -3,13 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package dto;
-
+import java.io.Serializable;
 /**
  *
  * @author BrayanOcampo
  */
-public class MascotaDTO {
+public class MascotaDTO implements Serializable  {
     
+    private static final long serialVersionUID = 1L;
      //Atributos encapsulados
     private String nombre;
     private String especie;
@@ -112,13 +113,13 @@ public class MascotaDTO {
     }
 
     public void setDocumentoProp(String documentoProp) {
-      if(documentoProp == null || documentoProp.length() < 5){
+      if(documentoProp == null || documentoProp.length() < 7){
             throw new IllegalArgumentException("Documento invalido, revise bien su documento");
         }
         this.documentoProp = documentoProp;
     }
     
-    public static MascotaDTO desdeLineaArchivo(String linea) {
+    /*public static MascotaDTO desdeLineaArchivo(String linea) {
         String[] partes = linea.split(",");
         if (partes.length != 5) return null; // Ahora se esperan 4 partes: id, nombre, especie, edad
             try {
@@ -129,6 +130,6 @@ public class MascotaDTO {
     }
 }
     public String toLineaArchivo() {
-    return id + "," + nombre + "," + especie + "," + edad + "," + documentoProp;
-    }
+        return id + "," + nombre + "," + especie + "," + edad + "," + documentoProp;
+    }*/
 }

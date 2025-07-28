@@ -1,27 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package persistencia;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ArchivoManager {
-    private File archivo;
+    /*private static final Map<String, ArchivoManager> instancias = new HashMap<>(); // Singleton por archivo
+    private final File archivo;
 
-    // Constructor que recibe la ruta del archivo
-    public ArchivoManager(String rutaArchivo) {
+    // 🔒 Constructor privado
+    private ArchivoManager(String rutaArchivo) {
         this.archivo = new File(rutaArchivo);
         crearArchivoSiNoExiste();
     }
 
-    // ✅ Verifica si el archivo existe, si no, lo crea
+    // ✅ Método estático para obtener instancia por ruta
+    public static ArchivoManager getInstancia(String rutaArchivo) {
+        return instancias.computeIfAbsent(rutaArchivo, ruta -> new ArchivoManager(ruta));
+    }
+
     private void crearArchivoSiNoExiste() {
         try {
             if (!archivo.exists()) {
-                archivo.getParentFile().mkdirs(); // Crea directorio si no existe
+                archivo.getParentFile().mkdirs();
                 archivo.createNewFile();
             }
         } catch (IOException e) {
@@ -29,7 +32,6 @@ public class ArchivoManager {
         }
     }
 
-    // ✅ Escribe una línea al final del archivo
     public void escribirLinea(String linea) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(archivo, true))) {
             bw.write(linea);
@@ -39,7 +41,6 @@ public class ArchivoManager {
         }
     }
 
-    // ✅ Lee todas las líneas del archivo
     public List<String> leerLineas() {
         List<String> lineas = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
@@ -53,7 +54,6 @@ public class ArchivoManager {
         return lineas;
     }
 
-    // ✅ Sobrescribe el contenido completo del archivo
     public void sobrescribirArchivo(List<String> lineas) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(archivo, false))) {
             for (String linea : lineas) {
@@ -65,43 +65,35 @@ public class ArchivoManager {
         }
     }
 
-    // ✅ Limpia el archivo sin eliminarlo
     public void limpiarArchivo() {
         sobrescribirArchivo(new ArrayList<>());
     }
 
-    // ✅ Elimina el archivo
     public boolean eliminarArchivo() {
         return archivo.delete();
     }
 
-    // ✅ Renombrar archivo
     public boolean renombrarArchivo(String nuevoNombre) {
         File nuevoArchivo = new File(archivo.getParent(), nuevoNombre);
         return archivo.renameTo(nuevoArchivo);
     }
 
-    // ✅ Obtener tamaño del archivo en bytes
     public long obtenerTamanioArchivo() {
         return archivo.length();
     }
 
-    // ✅ Obtener ruta absoluta
     public String getRutaAbsoluta() {
         return archivo.getAbsolutePath();
     }
 
-    // ✅ Saber si el archivo es un directorio
     public boolean esDirectorio() {
         return archivo.isDirectory();
     }
 
-    // ✅ Obtener nombre del archivo
     public String getNombreArchivo() {
         return archivo.getName();
     }
 
-    // ✅ Listar archivos de un directorio
     public static List<String> listarArchivos(String rutaDirectorio) {
         File dir = new File(rutaDirectorio);
         List<String> archivos = new ArrayList<>();
@@ -113,9 +105,7 @@ public class ArchivoManager {
         return archivos;
     }
 
-    // ✅ Obtener la ruta del archivo gestionado
     public String getRuta() {
         return archivo.getPath();
-    }
+    }*/
 }
-

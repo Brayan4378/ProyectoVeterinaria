@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ArchivoUtil {
 
-    // ✅ Escribe una línea en un archivo (modo append)
+   /* // ✅ Escribe una línea en un archivo (modo append)
     public static void escribirLinea(String ruta, String linea, boolean append) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(ruta, append))) {
             bw.write(linea);
@@ -69,5 +69,5 @@ public class ArchivoUtil {
         File archivoViejo = new File(rutaVieja);
         File archivoNuevo = new File(archivoViejo.getParent(), nuevoNombre);
         return archivoViejo.renameTo(archivoNuevo);
-    }
+    }*/
 }

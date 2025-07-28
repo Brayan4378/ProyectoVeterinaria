@@ -6,22 +6,19 @@ package modelo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
+import java.io.*;
 
 /**
  *
  * @author BrayanOcampo
  */
 
-public class Consulta {
-
+public class Consulta extends AtencionClinica implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
     //Atributos privados de la clase Consulta
-    private String codigo;
-    private LocalDate fecha;
     private String diagnostico;
     private String tratamiento;
-    private String idMascota;
-    private String documentoProCons;
-    private String nombreMascCons;
     //Constructor que recibe código y fecha en texto
     /*public Consulta(String codigo, String fecha) {
         //this.codigo = codigo;
@@ -30,16 +27,100 @@ public class Consulta {
         setFecha(fecha);
     }*/
 
-    public Consulta(String codigo, LocalDate fecha, String diagnostico, String tratamiento, String documentoProCons, String nombreMascCons) {
-        this.codigo = codigo;
-        this.fecha = fecha;
+    public Consulta(String diagnostico, String tratamiento, String codigo, LocalDate fecha, String idMascota, String nombreVeterinario) {
+        super(codigo, fecha, idMascota, nombreVeterinario);
         this.diagnostico = diagnostico;
         this.tratamiento = tratamiento;
-        this.documentoProCons = documentoProCons;
-        this.nombreMascCons = nombreMascCons;
+    }
+
+        @Override
+    public String getResumen() {
+        return "Consulta: Diagnóstico = " + diagnostico + ", Tratamiento = " + tratamiento;
     }
 
     public String getDiagnostico() {
+        return diagnostico;
+    }
+    
+    @Override
+    public String toLineaArchivo() {
+        return "consulta;" + getCodigo() + "," + getFecha() + "," + getIdMascota() + "," + getNombreVeterinario() + "," + diagnostico + "," + tratamiento;
+    }
+
+
+public static Consulta desdeLineaArchivo(String datos) {
+    String[] partes = datos.split(",");
+    if (partes.length == 6) {
+        return new Consulta(
+            partes[0],
+            partes[1],
+            partes[2],
+            LocalDate.parse(partes[3]),
+            partes[4],
+            partes[5]
+        );
+    } 
+    return null;
+}
+
+    public String getTratamiento() {
+        return tratamiento;
+    }
+
+    public void setTratamiento(String tratamiento) {
+        if (tratamiento == null || tratamiento.isBlank()){
+            throw new IllegalArgumentException("Este campo no puede estar vacio");
+        }
+        this.tratamiento = tratamiento;
+    }
+
+    public void setDiagnostico(String diagnostico) {
+        if (diagnostico == null || diagnostico.isBlank()){
+            throw new IllegalArgumentException("Este campo no puede estar vacio");
+        }
+        this.diagnostico = diagnostico;
+    }
+
+    @Override
+    public String getCodigo() {
+        return codigo;
+    }
+
+    @Override
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    @Override
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    @Override
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
+    @Override
+    public String getIdMascota() {
+        return idMascota;
+    }
+
+    @Override
+    public void setIdMascota(String idMascota) {
+        this.idMascota = idMascota;
+    }
+
+    @Override
+    public String getNombreVeterinario() {
+        return nombreVeterinario;
+    }
+
+    @Override
+    public void setNombreVeterinario(String nombreVeterinario) {
+        this.nombreVeterinario = nombreVeterinario;
+    }
+ /*   public String getDiagnostico() {
         return diagnostico;
     }
 
@@ -90,7 +171,7 @@ public class Consulta {
     }*/
 
     //Getter para el código
-    public String getCodigo() {
+   /* public String getCodigo() {
         return codigo;
     }
 
@@ -100,7 +181,7 @@ public class Consulta {
     }
 
     //Setter con validación para el código
-    public void setCodigo(String codigo) {
+    /*public void setCodigo(String codigo) {
         if (codigo == null || codigo.isBlank()) {
             throw new IllegalArgumentException("El código no puede estar vacío.");
         }
@@ -117,6 +198,5 @@ public class Consulta {
 
     public String getIdMascota() {
         return idMascota;
-    }  
-    
+    }*/
 }

@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controladores;
-import modelo.Consulta;
+import dto.ConsultaDTO;
 import dao.ConsultaDAO;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class ConsultaControlador {
 
-     private final ConsultaDAO dao;
+    /* private final ConsultaDAO dao;
 
     public ConsultaControlador() {
         this.dao = new ConsultaDAO();
@@ -27,13 +27,13 @@ public class ConsultaControlador {
             return false;
         }
         // Crear la consulta
-        Consulta consulta = new Consulta(codigo, fecha, diagnostico, tratamiento, documentoProCons, nombreMascCons);
+        ConsultaDTO consulta = new ConsultaDTO(codigo, fecha, diagnostico, tratamiento, documentoProCons, nombreMascCons);
         // Guardar en DAO
         return dao.guardarConsulta(consulta);
     }
 
     // Buscar consulta por código
-    public Consulta buscarConsulta(String codigo) {
+    public ConsultaDTO buscarConsulta(String codigo) {
         if (codigo == null || codigo.isBlank()) {
             return null;
         }
@@ -45,7 +45,7 @@ public class ConsultaControlador {
         if (codigo == null || codigo.isBlank()) {
             return false;
         }
-        Consulta consulta = dao.buscarConsulta(codigo);
+        ConsultaDTO consulta = dao.buscarConsulta(codigo);
         if (consulta != null) {
             return dao.eliminarConsulta(codigo);
         }
@@ -67,21 +67,21 @@ public class ConsultaControlador {
         LocalDate nuevaFecha = LocalDate.parse(nuevaFechaTexto);
 
         // Obtener la consulta actual
-        Consulta consultaExistente = dao.buscarConsulta(codigo);
+        ConsultaDTO consultaExistente = dao.buscarConsulta(codigo);
         if (consultaExistente == null) {
             return false;
         }
 
         // Crear nueva consulta copiando datos existentes pero con nueva fecha
-        Consulta nuevaConsulta = new Consulta(consultaExistente.getCodigo(), nuevaFecha, consultaExistente.getDiagnostico(), consultaExistente.getTratamiento(), consultaExistente.getDocumentoProCons(), consultaExistente.getNombreMascCons());
+        ConsultaDTO nuevaConsulta = new ConsultaDTO(consultaExistente.getCodigo(), nuevaFecha, consultaExistente.getDiagnostico(), consultaExistente.getTratamiento(), consultaExistente.getDocumentoProCons(), consultaExistente.getNombreMascCons());
         // Editar en el DAO
         return dao.editarConsulta(codigo, nuevaConsulta);
     }
 
     // Obtener todas las consultas
-    public ArrayList<Consulta> obtenerTodas() {
+    public ArrayList<ConsultaDTO> obtenerTodas() {
         return dao.obtenerTodas();
-    }
+    }*/
 }
 
 

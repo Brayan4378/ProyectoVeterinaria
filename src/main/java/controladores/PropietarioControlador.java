@@ -20,7 +20,7 @@ public class PropietarioControlador {
     }
 
     public boolean registrarPropietario(String nombre, String documento, String telefono) {
-        // Validar que los campos no estén vacíos y tengan longitud adecuada
+        // Validar que los campos no estén vacíos 
         if ((nombre == null || nombre.isBlank()) ||
             (documento == null || documento.length() < 5) ||
             (telefono == null || telefono.length() < 7)) {

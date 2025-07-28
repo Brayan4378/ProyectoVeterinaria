@@ -5,18 +5,25 @@
 package modelo;
 
 import java.util.ArrayList;
-
 /**
  *
  * @author BrayanOcampo
  */
 public class Historial {
     
-      private ArrayList<Consulta> consultas;
+      private ArrayList<AtencionClinica> atenciones;
      
 
     public Historial() {
-        this.consultas = new ArrayList<>();
+        this.atenciones = new ArrayList<>();
+    }
+    
+    public ArrayList<AtencionClinica> getAtenciones() {
+        return atenciones;
+    }
+
+    public void setAtenciones(ArrayList<AtencionClinica> atenciones) {
+        this.atenciones = atenciones;
     }
     
      /* public void agregarConsulta(Consulta consulta) {

@@ -8,19 +8,18 @@ package dto;
  *
  * @author BrayanOcampo
  */
-public class VeterinarioDTO extends PersonaDTO {
+public class VeterinarioDTO {
     
+    private String nombre;
     private String especialidad;
 
-    //Constructor de la clase veterinario, recibe nombre y especialidad, inicializa el objeto para despues asignarle valores
     public VeterinarioDTO(String nombre, String especialidad) {
         /*this.nombre = nombre;
         this.especialidad = especialidad;*/
-        super(nombre);
+        setNombre(nombre);
         setEspecialidad(especialidad);
     }
 
-    @Override
     public String getNombre() {
         return nombre;
     }
@@ -29,7 +28,6 @@ public class VeterinarioDTO extends PersonaDTO {
         return especialidad;
     }
 
-    @Override
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -37,4 +35,9 @@ public class VeterinarioDTO extends PersonaDTO {
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
+    
+    /*@Override
+    public String toString(){
+        return nombre + " - " + especialidad;
+    }*/
 }
