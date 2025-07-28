@@ -23,12 +23,27 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Component id="panelPrincipal" alignment="0" max="32767" attributes="0"/>
+=======
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="panelPrincipal" max="32767" attributes="0"/>
+          </Group>
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Component id="panelPrincipal" alignment="0" max="32767" attributes="0"/>
+=======
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="panelPrincipal" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
       </Group>
     </DimensionLayout>
   </Layout>
@@ -48,21 +63,34 @@
                   <Component id="lblTittle" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
+<<<<<<< HEAD
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jTabbedPane1" min="-2" pref="672" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+=======
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="jTabbedPane1" min="-2" pref="729" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="lblTittle" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   <Component id="jTabbedPane1" min="-2" pref="253" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
+=======
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="lblTittle" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jTabbedPane1" min="-2" pref="455" max="-2" attributes="0"/>
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
               </Group>
           </Group>
         </DimensionLayout>
@@ -92,6 +120,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -123,12 +152,61 @@
                               <Component id="bttMenu" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+=======
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="bttMenu" min="-2" pref="713" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="lblIDMasc" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                                          <Component id="txtIDMasc" min="-2" pref="153" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="lblDocumento" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                                  <Component id="txtDocProp" min="-2" pref="153" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="lblDiagn" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lblVetCarg" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lblTratamiento" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                      <Component id="txtTrata" max="32767" attributes="0"/>
+                                                      <Component id="txtDiagn" pref="371" max="32767" attributes="0"/>
+                                                      <Component id="comboVeterinarios" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="251" max="-2" attributes="0"/>
+                                  <Component id="bttRegistrar" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -167,27 +245,74 @@
                               </Group>
                           </Group>
                           <EmptySpace pref="37" max="32767" attributes="0"/>
+=======
+                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblDocumento" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtDocProp" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblIDMasc" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtIDMasc" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="comboVeterinarios" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblVetCarg" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblDiagn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtDiagn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblTratamiento" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTrata" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                          <Component id="bttRegistrar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="53" max="32767" attributes="0"/>
+                          <Component id="bttMenu" min="-2" pref="29" max="-2" attributes="0"/>
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
+<<<<<<< HEAD
                 <Component class="javax.swing.JLabel" name="jLabel1">
+=======
+                <Component class="javax.swing.JLabel" name="lblDocumento">
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Documento propietario:"/>
                   </Properties>
                 </Component>
+<<<<<<< HEAD
                 <Component class="javax.swing.JLabel" name="jLabel2">
+=======
+                <Component class="javax.swing.JLabel" name="lblIDMasc">
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
                   <Properties>
                     <Property name="text" type="java.lang.String" value="ID mascota:"/>
                   </Properties>
                 </Component>
+<<<<<<< HEAD
                 <Component class="javax.swing.JLabel" name="jLabel3">
+=======
+                <Component class="javax.swing.JLabel" name="lblDiagn">
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Diagnostico:"/>
                   </Properties>
                 </Component>
+<<<<<<< HEAD
                 <Component class="javax.swing.JLabel" name="jLabel4">
+=======
+                <Component class="javax.swing.JLabel" name="lblTratamiento">
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Tratamiento:"/>
                   </Properties>
@@ -208,6 +333,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bttRegistrarActionPerformed"/>
                   </Events>
                 </Component>
+<<<<<<< HEAD
                 <Component class="javax.swing.JButton" name="bttLimpiar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Limpiar"/>
@@ -216,6 +342,8 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bttLimpiarActionPerformed"/>
                   </Events>
                 </Component>
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
                 <Component class="javax.swing.JButton" name="bttMenu">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Menu"/>
@@ -224,6 +352,29 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bttMenuActionPerformed"/>
                   </Events>
                 </Component>
+<<<<<<< HEAD
+=======
+                <Component class="javax.swing.JLabel" name="lblVetCarg">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Veterinario a cargo:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboVeterinarios">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="consultasRegistradas">
@@ -238,6 +389,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
@@ -275,10 +427,59 @@
                           <EmptySpace pref="18" max="32767" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="411" max="-2" attributes="0"/>
                       </Group>
+=======
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtIDCons" min="-2" pref="97" max="-2" attributes="0"/>
+                                      <Component id="txtDocumento" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
+                                      <Component id="txtIDMascota" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                                  <Component id="bttBuscar" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="bttEliminar" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                              <Component id="bttEditar" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace pref="87" max="32767" attributes="0"/>
+                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtDiagnostico" min="-2" pref="97" max="-2" attributes="0"/>
+                                      <Component id="txtTratamiento" min="-2" pref="97" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                       <Component id="jScrollPane1" alignment="0" pref="218" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
@@ -306,6 +507,46 @@
                               <Component id="bttBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="bttEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="bttEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+=======
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtIDCons" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtDiagnostico" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtTratamiento" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bttEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bttBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bttEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" min="-2" pref="252" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtDocumento" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="txtIDMascota" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -379,11 +620,43 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Editar"/>
                   </Properties>
+<<<<<<< HEAD
+=======
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bttEditarActionPerformed"/>
+                  </Events>
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
                 </Component>
                 <Component class="javax.swing.JButton" name="bttEliminar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Eliminar"/>
                   </Properties>
+<<<<<<< HEAD
+=======
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bttEliminarActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="jButton1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Refrezcar tabla"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel10">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="ID Consulta:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtIDCons">
+                  <Properties>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Text Cursor"/>
+                    </Property>
+                  </Properties>
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
                 </Component>
               </SubComponents>
             </Container>

@@ -3,22 +3,44 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package dto;
+<<<<<<< HEAD
 
+=======
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 /**
  *
  * @author BrayanOcampo
  */
+<<<<<<< HEAD
 public class PropietarioDTO extends PersonaDTO {
+=======
+public class PropietarioDTO  implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
+    private String nombre;
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     private String documento;
     private String telefono;
 
     public PropietarioDTO(String nombre, String documento, String telefono) {
+<<<<<<< HEAD
         super(nombre);
         setDocumento(documento);
         setTelefono(telefono);
     }
     
    @Override
+=======
+        this.nombre = nombre;
+        this.documento = documento;
+        this.telefono = telefono;
+    }
+    
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     public void setNombre(String nombre) {
         //this.nombre = nombre;
         if(nombre == null || nombre.isBlank()){
@@ -43,7 +65,10 @@ public class PropietarioDTO extends PersonaDTO {
         this.telefono = telefono;
     }
     
+<<<<<<< HEAD
     @Override
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     public String getNombre() {
         return nombre;
     }
@@ -56,7 +81,11 @@ public class PropietarioDTO extends PersonaDTO {
         return telefono;
     }
     
+<<<<<<< HEAD
     public static PropietarioDTO desdeLineaArchivo(String linea) {
+=======
+    /*public static PropietarioDTO desdeLineaArchivo(String linea) {
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
         String[] partes = linea.split(",");
         if (partes.length != 3) return null; // nombre, documento, telefono
         try {
@@ -71,5 +100,21 @@ public class PropietarioDTO extends PersonaDTO {
     
     public String toLineaArchivo() {
         return nombre + "," + documento + "," + telefono;
+<<<<<<< HEAD
+=======
+    }*/
+    
+        // Serialización personalizada
+    private void writeObject(ObjectOutputStream out) throws IOException {
+        out.writeUTF(nombre);     // 1. Primero nombre
+        out.writeUTF(documento);  // 2. Luego documento
+        out.writeUTF(telefono);   // 3. Luego teléfono
+    }
+
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+        nombre = in.readUTF();     // 1. Leer nombre
+        documento = in.readUTF();  // 2. Leer documento
+        telefono = in.readUTF();   // 3. Leer teléfono
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     }
 }

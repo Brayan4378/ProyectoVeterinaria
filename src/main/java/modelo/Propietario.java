@@ -4,14 +4,24 @@
  */
 package modelo;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 
+=======
+import java.io.*;
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 /**
  *
  * @author BrayanOcampo
  */
+<<<<<<< HEAD
 public class Propietario extends Persona {
     
+=======
+public class Propietario implements Serializable{
+    
+    private static final long serialVersionUID = 1L;
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     //Atributos protegidos de la clase propietario
     private String nombre;
     /*private int documento;
@@ -22,7 +32,11 @@ public class Propietario extends Persona {
 
     //Constructor de la clase Propietario, recibe nombre, documento y teléfono
     public Propietario(String nombre, String documento, String telefono) {
+<<<<<<< HEAD
         super(nombre);
+=======
+        setNombre(nombre);
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
         /*this.nombre = nombre;
         this.documento = documento;
         this.telefono = telefono;*/
@@ -59,7 +73,10 @@ public class Propietario extends Persona {
     }
 }*/
     
+<<<<<<< HEAD
     @Override
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     public void setNombre(String nombre) {
         //this.nombre = nombre;
         if(nombre == null || nombre.isBlank()){
@@ -90,7 +107,10 @@ public class Propietario extends Persona {
         return new ArrayList<>(mascotas);
     }*/
 
+<<<<<<< HEAD
     @Override
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     public String getNombre() {
         return nombre;
     }

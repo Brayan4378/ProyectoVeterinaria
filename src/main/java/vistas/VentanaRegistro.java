@@ -118,12 +118,15 @@ private void actualizarTablaPropietarios() {
 }
 
 private void inicializarComboEspecie() {
+<<<<<<< HEAD
     comboEspecie.removeAllItems(); // limpia 
 
     comboEspecie.addItem("Perro");
     comboEspecie.addItem("Gato");
     comboEspecie.addItem("Conejo");
     
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     comboEspecie1.removeAllItems(); // limpia 
 
     comboEspecie1.addItem("Perro");
@@ -190,13 +193,19 @@ private void inicializarComboEspecie() {
         bttEditarMas = new javax.swing.JButton();
         bttActualizarMasc = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+<<<<<<< HEAD
         jLabel6 = new javax.swing.JLabel();
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         txtIDMascota = new javax.swing.JTextField();
         txtNombreMascota = new javax.swing.JTextField();
         txtDocumentoPropMascota = new javax.swing.JTextField();
+<<<<<<< HEAD
         comboEspecie = new javax.swing.JComboBox<>();
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
         lblTittle = new javax.swing.JLabel();
         bttMenu = new javax.swing.JButton();
         barraCarga = new javax.swing.JProgressBar();
@@ -226,6 +235,10 @@ private void inicializarComboEspecie() {
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+<<<<<<< HEAD
+=======
+        txAMens1.setEditable(false);
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
         txAMens1.setColumns(20);
         txAMens1.setRows(5);
         txAMens1.setText("Tener en cuenta:\n\n* Asegurese de rellenar todos \nlos campos, sino no se podra\nregistrar.\n\n*La informacion debe ser\n correcta para proceder\n con el registro.\n\n*Para registrar una mascota, debe estar \n registrado el propietario\n\n\nGracias por preferirnos.");
@@ -570,14 +583,20 @@ private void inicializarComboEspecie() {
 
         jLabel4.setText("Nombre:");
 
+<<<<<<< HEAD
         jLabel6.setText("Especie:");
 
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
         jLabel7.setText("Documento propietario");
 
         jLabel8.setText("ID:");
 
+<<<<<<< HEAD
         comboEspecie.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
         javax.swing.GroupLayout panelMascotasRegistradasLayout = new javax.swing.GroupLayout(panelMascotasRegistradas);
         panelMascotasRegistradas.setLayout(panelMascotasRegistradasLayout);
         panelMascotasRegistradasLayout.setHorizontalGroup(
@@ -585,6 +604,7 @@ private void inicializarComboEspecie() {
             .addGroup(panelMascotasRegistradasLayout.createSequentialGroup()
                 .addGroup(panelMascotasRegistradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelMascotasRegistradasLayout.createSequentialGroup()
+<<<<<<< HEAD
                         .addGap(17, 17, 17)
                         .addGroup(panelMascotasRegistradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelMascotasRegistradasLayout.createSequentialGroup()
@@ -602,6 +622,25 @@ private void inicializarComboEspecie() {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtDocumentoPropMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(9, 9, 9)
+=======
+                        .addGroup(panelMascotasRegistradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(panelMascotasRegistradasLayout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addGroup(panelMascotasRegistradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4))
+                                .addGap(40, 40, 40)
+                                .addGroup(panelMascotasRegistradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtIDMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNombreMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(61, 61, 61))
+                            .addGroup(panelMascotasRegistradasLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtDocumentoPropMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -624,7 +663,13 @@ private void inicializarComboEspecie() {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panelMascotasRegistradasLayout.createSequentialGroup()
                 .addGroup(panelMascotasRegistradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+=======
+                    .addGroup(panelMascotasRegistradasLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE))
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
                     .addGroup(panelMascotasRegistradasLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(panelMascotasRegistradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -634,6 +679,7 @@ private void inicializarComboEspecie() {
                         .addGroup(panelMascotasRegistradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(txtNombreMascota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+<<<<<<< HEAD
                         .addGap(16, 16, 16)
                         .addGroup(panelMascotasRegistradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
@@ -643,6 +689,13 @@ private void inicializarComboEspecie() {
                             .addComponent(jLabel7)
                             .addComponent(txtDocumentoPropMascota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+=======
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(panelMascotasRegistradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(txtDocumentoPropMascota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(34, 34, 34)))
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
                 .addGroup(panelMascotasRegistradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bttBuscarMascota)
                     .addComponent(bttEliminarMasc)
@@ -776,6 +829,11 @@ private void inicializarComboEspecie() {
             JOptionPane.showMessageDialog(this, "Seleccione una mascota para eliminar.");
             return;
         }
+<<<<<<< HEAD
+=======
+        int comfirmacion = JOptionPane.showConfirmDialog(this, "¿Seguro que desea eliminar esta mascota?", "Advertencia", JOptionPane.YES_NO_OPTION);
+        if (comfirmacion == JOptionPane.YES_OPTION){
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
         String id = (String) tablaMasc.getValueAt(fila, 0);
         MascotaDTO mascota = mascotaControlador.buscarMascota(id);
         if (mascota != null && mascotaControlador.eliminarMascota(id)) {
@@ -784,6 +842,10 @@ private void inicializarComboEspecie() {
         } else {
             JOptionPane.showMessageDialog(this, "No se pudo eliminar la mascota.");
         }
+<<<<<<< HEAD
+=======
+        }
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     }//GEN-LAST:event_bttEliminarMascActionPerformed
 
     private void bttBuscarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttBuscarMascotaActionPerformed
@@ -799,7 +861,10 @@ private void inicializarComboEspecie() {
                 + "\nEspecie: " + m.getEspecie() + "\nEdad: " + m.getEdad());
             txtNombreMascota.setText(m.getNombre());
             txtDocumentoPropMascota.setText(m.getDocumentoProp());
+<<<<<<< HEAD
             comboEspecie.setSelectedItem(m.getEspecie());
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
         } else {
             JOptionPane.showMessageDialog(this, "Mascota no encontrada.");
         }
@@ -809,6 +874,13 @@ private void inicializarComboEspecie() {
         // TODO add your handling code here:
         String documento = txtDocumentoPropietario.getText();
         if (!documento.isBlank()) {
+<<<<<<< HEAD
+=======
+            
+            int comfirmacion = JOptionPane.showConfirmDialog(this, "¿Seguro que desea eliminar este propietario", "Advertencia", JOptionPane.YES_NO_OPTION);
+            
+            if (comfirmacion == JOptionPane.YES_OPTION) {
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
             boolean exito = propietarioControlador.eliminarPropietario(documento);
             if (exito) {
                 JOptionPane.showMessageDialog(this, "Propietario eliminado.");
@@ -820,6 +892,10 @@ private void inicializarComboEspecie() {
         } else {
             JOptionPane.showMessageDialog(this, "Ingrese el documento a eliminar.");
         }
+<<<<<<< HEAD
+=======
+        }
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     }//GEN-LAST:event_bttEliminarPropActionPerformed
 
     private void bttActualizarPropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttActualizarPropActionPerformed
@@ -871,23 +947,34 @@ private void inicializarComboEspecie() {
             return;
         }
         PropietarioDTO propietario = new PropietarioDTO(nombre, documento, telefono);
+<<<<<<< HEAD
         propietario.setNombre(nombre);
         propietario.setDocumento(documento);
         propietario.setTelefono(telefono);
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
         boolean registrado = propietarioControlador.registrarPropietario(nombre, documento, telefono);
         if (registrado) {
             JOptionPane.showMessageDialog(this, "Propietario registrado exitosamente");
             limpiarCampos();
             actualizarTablaPropietarios();
         } else {
+<<<<<<< HEAD
             JOptionPane.showMessageDialog(this, "Ya existe un propietario con ese documento", "Error", JOptionPane.ERROR_MESSAGE);
+=======
+            JOptionPane.showMessageDialog(this, "Error al registrar el propietario, verifique los datos", "Error", JOptionPane.ERROR_MESSAGE);
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
         }
     }//GEN-LAST:event_bttRegistrarPropActionPerformed
 
     private void bttRegistrarMascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttRegistrarMascActionPerformed
         // TODO add your handling code here:
         String nombre = txtNombre.getText().trim();
+<<<<<<< HEAD
         String especie = (String) comboEspecie.getSelectedItem();
+=======
+        String especie =  comboEspecie1.getSelectedItem().toString();
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
         String edadTexto = txtEdad.getText().trim();
         String documentoProp = txtDocProp.getText().trim();
 
@@ -895,7 +982,10 @@ private void inicializarComboEspecie() {
         JOptionPane.showMessageDialog(this, "Todos los campos deben estar llenos.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         return;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     int edad;
     try {
         edad = Integer.parseInt(edadTexto);
@@ -907,17 +997,25 @@ private void inicializarComboEspecie() {
         JOptionPane.showMessageDialog(this, "La edad debe ser un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     // Validar existencia del propietario
     PropietarioDTO propietarioEncontrado = propietarioControlador.buscarPropietario(documentoProp);
     if (propietarioEncontrado == null) {
         JOptionPane.showMessageDialog(this, "No existe un propietario con ese documento.", "Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
+<<<<<<< HEAD
 
     // Validacion para que no se repitan ID´s
     String id;
     
+=======
+    // Validacion para que no se repitan ID´s
+    String id;
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     do {
         id = IDGenerator.generarCodigoMascota();
     } while (mascotaControlador.buscarMascota(id) != null); // Asegura que el ID no esté repetido
@@ -939,6 +1037,10 @@ private void inicializarComboEspecie() {
         txtTel.setText(null);
         txtNombre.setText(null);
         txtEdad.setText(null);
+<<<<<<< HEAD
+=======
+        txtDocumentoPropMascota.setText(null);
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     }
     /**
      * @param args the command line arguments
@@ -983,14 +1085,20 @@ private void inicializarComboEspecie() {
     private javax.swing.JButton bttMenu;
     private javax.swing.JButton bttRegistrarMasc;
     private javax.swing.JButton bttRegistrarProp;
+<<<<<<< HEAD
     private javax.swing.JComboBox<String> comboEspecie;
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     private javax.swing.JComboBox<String> comboEspecie1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+<<<<<<< HEAD
     private javax.swing.JLabel jLabel6;
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;

@@ -3,23 +3,43 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package dto;
+<<<<<<< HEAD
 
+=======
+import java.io.Serializable;
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 /**
  *
  * @author BrayanOcampo
  */
+<<<<<<< HEAD
 public class MascotaDTO {
     
+=======
+public class MascotaDTO implements Serializable  {
+    
+    private static final long serialVersionUID = 1L;
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
      //Atributos encapsulados
     private String nombre;
     private String especie;
     private int edad;
     private String id;
+<<<<<<< HEAD
     //private ArrayList<Consulta> consultas = new ArrayList<>();
     //Se delega la responsabilidad del historial
     private String documentoProp;
 
     //Constructor
+=======
+    // Private ArrayList<Consulta> consultas = new ArrayList<>();
+    // Se delega la responsabilidad del historial
+    
+    // Asociación debil con PropietarioDTO debido a que no tienen una relación por documentoProp, si se elimina una, la otra no se elimina
+    private String documentoProp;
+
+    // Constructor
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     public MascotaDTO( String id, String nombre, String especie, int edad, String documentoProp) {
         /*this.nombre = nombre;
         this.especie = especie;
@@ -110,13 +130,21 @@ public class MascotaDTO {
     }
 
     public void setDocumentoProp(String documentoProp) {
+<<<<<<< HEAD
       if(documentoProp == null || documentoProp.length() < 5){
+=======
+      if(documentoProp == null || documentoProp.length() < 7){
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
             throw new IllegalArgumentException("Documento invalido, revise bien su documento");
         }
         this.documentoProp = documentoProp;
     }
     
+<<<<<<< HEAD
     public static MascotaDTO desdeLineaArchivo(String linea) {
+=======
+    /*public static MascotaDTO desdeLineaArchivo(String linea) {
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
         String[] partes = linea.split(",");
         if (partes.length != 5) return null; // Ahora se esperan 4 partes: id, nombre, especie, edad
             try {
@@ -127,6 +155,11 @@ public class MascotaDTO {
     }
 }
     public String toLineaArchivo() {
+<<<<<<< HEAD
     return id + "," + nombre + "," + especie + "," + edad + "," + documentoProp;
     }
+=======
+        return id + "," + nombre + "," + especie + "," + edad + "," + documentoProp;
+    }*/
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 }

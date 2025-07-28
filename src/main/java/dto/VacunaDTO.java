@@ -5,14 +5,78 @@
 package dto;
 
 import java.time.LocalDate;
+<<<<<<< HEAD
 
+=======
+import java.io.*;
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 /**
  *
  * @author BrayanOcampo
  */
+<<<<<<< HEAD
 public class VacunaDTO {
     
      private String tipo;
+=======
+public class VacunaDTO extends AtencionClinicaDTO implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
+    private String tipoVacuna;
+    private String dosis;
+
+    public VacunaDTO(String codigo, LocalDate fecha, String idMascota, String dosis, String nombreVeterinario, String tipoVacuna) {
+        super(codigo, fecha, idMascota, nombreVeterinario);
+        this.tipoVacuna = tipoVacuna;
+        this.dosis = dosis;
+    }
+    
+
+    @Override
+    public String getResumen() {
+        return "Vacuna: " + tipoVacuna;
+    }
+
+    public String getTipoVacuna() {
+        return tipoVacuna;
+    }
+
+    public String getDosis() {
+        return dosis;
+    }
+
+    public void setTipoVacuna(String tipoVacuna) {
+        this.tipoVacuna = tipoVacuna;
+    }
+
+    public void setDosis(String dosis) {
+        this.dosis = dosis;
+    }
+    
+    
+    
+    /*@Override
+    public String toLineaArchivo() {
+        return "vacuna;" + codigo + "," + fecha + "," + idMascota + "," + dosis + "," + nombreVeterinario + "," + tipoVacuna;
+    }
+    
+    public static VacunaDTO desdeLineaArchivo(String datos) {
+        String[] partes = datos.split(",");
+    if (partes.length == 6) {
+        return new VacunaDTO(
+            partes[0],                       // código
+            LocalDate.parse(partes[1]),     // fecha
+            partes[2],                       // idMascota
+            partes[3],                       // dosis
+            partes[4],                       // nombreVeterinario
+            partes[5]                        // tipoVacuna
+        );
+    }
+    return null;
+}*/
+    
+ /*    private String tipo;
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     private String codigo;
     private LocalDate fechaAplicacion;
     private LocalDate proximaDosis;
@@ -70,4 +134,25 @@ public class VacunaDTO {
             this.proximaDosis = proximaDosis;
         }
     }
+<<<<<<< HEAD
+=======
+}*/
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public String getIdMascota() {
+        return idMascota;
+    }
+
+    public String getNombreVeterinario() {
+        return nombreVeterinario;
+    }
+
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 }

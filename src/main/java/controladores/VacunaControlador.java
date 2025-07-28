@@ -14,7 +14,11 @@ import java.time.LocalDate;
 
 public class VacunaControlador {
 
+<<<<<<< HEAD
     private VacunaDAO dao;
+=======
+   /* private VacunaDAO dao;
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 
     // Constructor
     public VacunaControlador(VacunaDAO dao) {
@@ -55,5 +59,9 @@ public class VacunaControlador {
             return dao.eliminarVacuna(tipo, lote);
         }
         return false;
+<<<<<<< HEAD
     }
+=======
+    }*/
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 }

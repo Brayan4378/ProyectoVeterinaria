@@ -3,18 +3,33 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelo;
+<<<<<<< HEAD
 
 // import java.util.ArrayList;
 
 
 public class Mascota {
 
+=======
+import java.io.*;
+// import java.util.ArrayList;
+
+
+public class Mascota implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     //Atributos encapsulados
     private String nombre;
     private String especie;
     private int edad;
     private String id;
     //private ArrayList<Consulta> consultas = new ArrayList<>();
+<<<<<<< HEAD
+=======
+    
+    // Asociación debil con PropietarioDTO debido a que no tienen una relación por documentoProp, si se elimina una, la otra no se elimina
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     private String documentoProp;
 
     //Constructor

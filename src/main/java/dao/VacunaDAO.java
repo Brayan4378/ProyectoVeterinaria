@@ -11,7 +11,11 @@ import java.util.ArrayList;
  */
 
 public class VacunaDAO {
+<<<<<<< HEAD
 
+=======
+/*
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     // Lista que almacena todas las vacunas registradas
     private ArrayList<VacunaDTO> vacunas = new ArrayList<>();
 
@@ -63,7 +67,11 @@ public class VacunaDAO {
     // Obtener todas las vacunas 
     public ArrayList<VacunaDTO> obtenerTodas() {
         return new ArrayList<>(vacunas);
+<<<<<<< HEAD
     }
+=======
+    }*/
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 }
 
 

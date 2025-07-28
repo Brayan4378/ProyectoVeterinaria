@@ -1,14 +1,24 @@
 modelo\Propietario.class
+<<<<<<< HEAD
 modelo\Historial.class
 dao\MascotaDAO.class
 dto\PersonaDTO.class
 dto\MascotaDTO.class
 vistas\VentanaRegistro$5.class
+=======
+vistas\VentanaHistorial$4.class
+modelo\Historial.class
+dao\MascotaDAO.class
+dto\MascotaDTO.class
+vistas\VentanaRegistro$5.class
+vistas\VentanaVacuna$5.class
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 vistas\VentanaMedicina$3.class
 vistas\VentanaVacuna$1.class
 vistas\VentanaRegistro$1.class
 controladores\PropietarioControlador.class
 vistas\VentanaRegistro$8.class
+<<<<<<< HEAD
 modelo\Vacuna.class
 vistas\VentanaPrincipal$3.class
 controladores\VacunaControlador.class
@@ -17,6 +27,25 @@ com\mycompany\regyhistmascotas\RegYHistMascotas.class
 persistencia\ArchivoManager.class
 dto\VacunaDTO.class
 vistas\VentanaServicios$2.class
+=======
+controladores\AtencionClinicaControlador.class
+dao\HistorialDAO.class
+modelo\Vacuna.class
+vistas\VentanaPrincipal$3.class
+controladores\VacunaControlador.class
+vistas\VentanaMedicina$6.class
+vistas\VentanaHistorial$3.class
+vistas\VentanaRegistro$4.class
+com\mycompany\regyhistmascotas\RegYHistMascotas.class
+Gestor\Gestor.class
+controladores\HistorialControlador.class
+persistencia\ArchivoManager.class
+dto\HistorialDTO.class
+dto\VacunaDTO.class
+controladores\VeterinarioControlador.class
+vistas\VentanaServicios$2.class
+modelo\AtencionClinica.class
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 vistas\VentanaMedicina$2.class
 vistas\VentanaRegistro$11.class
 vistas\VentanaVacuna$2.class
@@ -24,6 +53,7 @@ modelo\Mascota.class
 modelo\Veterinario.class
 controladores\ConsultaControlador.class
 vistas\VentanaPrincipal.class
+<<<<<<< HEAD
 vistas\VentanaRegistro$7.class
 vistas\VentanaPrincipal$2.class
 dto\PropietarioDTO.class
@@ -34,16 +64,41 @@ vistas\VentanaRegistro$10.class
 vistas\VentanaMedicina.class
 vistas\VentanaRegistro$3.class
 vistas\VentanaRegistro$6.class
+=======
+excepciones\DatoInvalidoException.class
+vistas\VentanaRegistro$7.class
+vistas\VentanaPrincipal$2.class
+dto\AtencionClinicaDTO.class
+dto\PropietarioDTO.class
+vistas\VentanaHistorial$2.class
+herramientas\IDGenerator.class
+vistas\VentanaVacuna.class
+dao\PropietarioDAO.class
+vistas\VentanaMedicina$5.class
+vistas\VentanaRegistro$10.class
+vistas\VentanaMedicina.class
+vistas\VentanaHistorial.class
+vistas\VentanaVacuna$6.class
+vistas\VentanaRegistro$3.class
+vistas\VentanaRegistro$6.class
+dao\VeterinarioDAO.class
+dto\ConsultaDTO.class
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 dto\VeterinarioDTO.class
 vistas\VentanaVacuna$3.class
 vistas\VentanaRegistro.class
 dao\VacunaDAO.class
 modelo\Consulta.class
 persistencia\ArchivoUtil.class
+<<<<<<< HEAD
+=======
+vistas\VentanaVacuna$4.class
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 vistas\VentanaRegistro$9.class
 vistas\VentanaMedicina$1.class
 vistas\VentanaPrincipal$1.class
 dao\ConsultaDAO.class
+<<<<<<< HEAD
 controladores\MascotaControlador.class
 vistas\VentanaServicios.class
 vistas\VentanaRegistro$2.class
@@ -51,3 +106,14 @@ vistas\VentanaPrincipal$4.class
 modelo\Persona.class
 vistas\VentanaMedicina$4.class
 vistas\VentanaServicios$1.class
+=======
+vistas\VentanaVacuna$7.class
+controladores\MascotaControlador.class
+vistas\VentanaHistorial$1.class
+vistas\VentanaServicios.class
+vistas\VentanaRegistro$2.class
+vistas\VentanaPrincipal$4.class
+vistas\VentanaMedicina$4.class
+vistas\VentanaServicios$1.class
+dao\AtencionClinicaDAO.class
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875

@@ -21,6 +21,10 @@ public class VentanaServicios extends javax.swing.JFrame {
     private VentanaPrincipal menu;
     private VentanaMedicina ventanaMedicina;
     private VentanaVacuna ventanaVacuna;
+<<<<<<< HEAD
+=======
+    private VentanaHistorial ventanaHistorial;
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     /**
      * Creates new form VentanaServicios
      */
@@ -35,6 +39,10 @@ public class VentanaServicios extends javax.swing.JFrame {
         setVisible(true);
         VentanaVacuna ventanaVacuna = new VentanaVacuna(this);
         VentanaMedicina ventanaMedicina = new VentanaMedicina(this);
+<<<<<<< HEAD
+=======
+        VentanaHistorial ventanaHistorial = new VentanaHistorial(this);
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 
         // Crear el nodo raíz del árbol con el nombre "Carpeta"
         DefaultMutableTreeNode carpeta = new DefaultMutableTreeNode("Carpeta");
@@ -42,11 +50,19 @@ public class VentanaServicios extends javax.swing.JFrame {
         // Crear nodos hijos para los diferentes servicios
         DefaultMutableTreeNode medicina = new DefaultMutableTreeNode("Medicina General");
         DefaultMutableTreeNode vacuna = new DefaultMutableTreeNode("Vacuna");
+<<<<<<< HEAD
+=======
+        DefaultMutableTreeNode historial = new DefaultMutableTreeNode("Historial");
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
         DefaultMutableTreeNode salir = new DefaultMutableTreeNode("Salir");
 
         // Agregar los nodos hijos al nodo raíz (carpeta)
         carpeta.add(medicina);
         carpeta.add(vacuna);
+<<<<<<< HEAD
+=======
+        carpeta.add(historial);
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
         carpeta.add(salir);
 
         // Crear el modelo del árbol usando el nodo raíz y asignarlo al JTree
@@ -74,11 +90,20 @@ public class VentanaServicios extends javax.swing.JFrame {
                     
                 // Abrir la ventana para servicios de vacunación
                 case "Vacuna" -> ventanaVacuna.setVisible(true);
+<<<<<<< HEAD
                    
                 // Cerrar la ventana
                 case "Salir" -> VentanaServicios.this.dispose();
                     
                     
+=======
+                
+                // Abrir la ventana para historial clinico
+                case "Historial" -> ventanaHistorial.setVisible(true);
+                   
+                // Cerrar la ventana
+                case "Salir" -> VentanaServicios.this.dispose();
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
             }
         }
     }

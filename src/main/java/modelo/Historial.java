@@ -5,18 +5,37 @@
 package modelo;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 /**
  *
  * @author BrayanOcampo
  */
 public class Historial {
     
+<<<<<<< HEAD
       private ArrayList<Consulta> consultas;
      
 
     public Historial() {
         this.consultas = new ArrayList<>();
+=======
+      private ArrayList<AtencionClinica> atenciones;
+     
+
+    public Historial() {
+        this.atenciones = new ArrayList<>();
+    }
+    
+    public ArrayList<AtencionClinica> getAtenciones() {
+        return atenciones;
+    }
+
+    public void setAtenciones(ArrayList<AtencionClinica> atenciones) {
+        this.atenciones = atenciones;
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
     }
     
      /* public void agregarConsulta(Consulta consulta) {

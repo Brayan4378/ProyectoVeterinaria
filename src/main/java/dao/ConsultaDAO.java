@@ -4,7 +4,11 @@
  */
 package dao;
 import java.time.LocalDate;
+<<<<<<< HEAD
 import modelo.Consulta;
+=======
+import dto.ConsultaDTO;
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 /**
  *
  * @author BrayanOcampo
@@ -13,13 +17,22 @@ import java.util.ArrayList;
 
 public class ConsultaDAO {
 
+<<<<<<< HEAD
     private ArrayList<Consulta> consultas = new ArrayList<>();
+=======
+   /* private ArrayList<ConsultaDTO> consultas = new ArrayList<>();
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 
     public ConsultaDAO() {}
 
     // Guarda una nueva consulta si no existe el mismo código
+<<<<<<< HEAD
     public boolean guardarConsulta(Consulta consulta) {
         for (Consulta c : consultas) {
+=======
+    public boolean guardarConsulta(ConsultaDTO consulta) {
+        for (ConsultaDTO c : consultas) {
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
             if (c.getCodigo().equals(consulta.getCodigo())) {
                 return false; // Ya existe una consulta con ese código
             }
@@ -29,8 +42,13 @@ public class ConsultaDAO {
     }
 
     // Busca una consulta por su código
+<<<<<<< HEAD
     public Consulta buscarConsulta(String codigo) {
         for (Consulta c : consultas) {
+=======
+    public ConsultaDTO buscarConsulta(String codigo) {
+        for (ConsultaDTO c : consultas) {
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
             if (c.getCodigo().equals(codigo)) {
                 return c;
             }
@@ -40,7 +58,11 @@ public class ConsultaDAO {
 
     // Elimina una consulta según su código
     public boolean eliminarConsulta(String codigo) {
+<<<<<<< HEAD
         for (Consulta c : consultas) {
+=======
+        for (ConsultaDTO c : consultas) {
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
             if (c.getCodigo().equals(codigo)) {
                 consultas.remove(c);
                 return true;
@@ -50,8 +72,13 @@ public class ConsultaDAO {
     }
 
     // Edita una consulta existente, reemplazando sus datos
+<<<<<<< HEAD
     public boolean editarConsulta(String codigo, Consulta nuevaConsulta) {
         for (Consulta c : consultas) {
+=======
+    public boolean editarConsulta(String codigo, ConsultaDTO nuevaConsulta) {
+        for (ConsultaDTO c : consultas) {
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
             if (c.getCodigo().equals(codigo)) {
                 c.setFecha(nuevaConsulta.getFecha());
                 c.setDiagnostico(nuevaConsulta.getDiagnostico());
@@ -65,9 +92,15 @@ public class ConsultaDAO {
     }
 
     // Devuelve todas las consultas registradas
+<<<<<<< HEAD
     public ArrayList<Consulta> obtenerTodas() {
         return new ArrayList<>(consultas);
     }
+=======
+    public ArrayList<ConsultaDTO> obtenerTodas() {
+        return new ArrayList<>(consultas);
+    }*/
+>>>>>>> 5135cb6208e66fab6ac5b2201e395cec78a1b875
 }
 
 
